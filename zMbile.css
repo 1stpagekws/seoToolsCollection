@@ -52,7 +52,7 @@ body {
 				padding-left:1mm;
 				padding-right:1mm;
 				border-radius:4px;
-			} #dsplaySizeButton:hover {background:#ec1293;}
+			} #dsplaySizeButton:active {background:#000000;}
 
 hr {
 	margin-left:4mm;
@@ -153,11 +153,11 @@ hr {
 			margin-bottom:16mm;
 		}
 			#btn1 {
-				width:49%;
+				width:47%;
 				height:12mm;
-			} button {border:0px solid #222222; background-color:#4a95bf; border-radius:2mm;
+			} button {border:0px solid #222222; background-color:#4a95bf; border-radius:1mm;
 				font-weight:900; font-size:4mm; color:#ffffff;
-				} button:active {background-color:#ec1293;}
+				} button:active {background-color:#000000;}
 			#btn2 {
 				width:49%;
 				height:12mm;
