@@ -1,49 +1,19 @@
 <?php
-//--567890-B34567890-C34567890-D34567890-E34567890-F34567890-G34567890-H34567890-I34567890-J--->
-// if desktop styling code is requested: make a record that future styling code to be used
-// should be desktop
-if (isset ($_GET ["dsplaySize"]) != true) {
-	$_GET ["dsplaySize"] = ""; }
-if (isset ($_COOKIE ["dsplaySize"]) != true) {
-	$_COOKIE ["dsplaySize"] = ""; }
-
-//|^^^^LEVEL 1^^^^|
-//|^^^^LEVEL 2^^^^|
-if ($_GET    ["dsplaySize"] == "mobile") {
-	setcookie("dsplaySize",    "mobile", time () + (60 * 60 * 24 * 400));
-	$_COOKIE ["dsplaySize"]  = "mobile";
-
-} else if ($_GET ["dsplaySize"] == "dsktop") {
-	setcookie("dsplaySize",    "dsktop", time () + (60 * 60 * 24 * 400));
-	$_COOKIE ["dsplaySize"]  = "dsktop"; }
-//|====LEVEL 2====|
-
-//|^^^^LEVEL 2^^^^|
-if (($_GET ["dsplaySize"] != "mobile" && $_GET ["dsplaySize"] != "dsktop") &&
-	$_COOKIE ["dsplaySize"] == "") {
-	$deviceType = false;
-	$deviceType = preg_match ("/(android|webos|avantgo|iphone|ipad|ipod|blackberry|" .
-		"iemobile|bolt|boost|cricket|docomo|fone|hiptop|mini|opera mini|kitkat|" .
-		"mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i",
-		$_SERVER ["HTTP_USER_AGENT"]);
-
-	if ($deviceType == true) {
-		setcookie ("dsplaySize",   "mobile", time () + (60 * 60 * 24 * 400));
-		$_COOKIE  ["dsplaySize"] = "mobile";
-	} else {
-		setcookie ("dsplaySize",   "dsktop", time () + (60 * 60 * 24 * 400));
-		$_COOKIE  ["dsplaySize"] = "dsktop"; } }
-//|====LEVEL 2====|
-//|====LEVEL 1====|
-?>
+include_once "xxLib/lbrr.php";
+determineDiplaySizeToUse (); ?>
 
 <!DOCTYPE html>
 <head>
-<title>RealEstatEko || SEO Tools Collection</title> </head>
+<title>RealEstatEko || SEO Tools Collection</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<link rel="stylesheet" href="<?php echo prvideIdOfTheApprprStylngCode (); ?>" /> </head>
 
-<body>
-<div id="header">
-	<div id="prfile">
-		<span id="name"><img src="icon.png" /> 1stPage KWs</span>
-		<span id="vMBt">Mobile</span> </div>
-	<div id="tabNme"><< BACK || SEO Tools Collection</div> </div> </body> </html>
+<body><div id="body">
+<div id="hder">
+	<div id="prfl">
+		<span id="name"><img src="z>ic.png" /> <span id="text">1stPage KWs</span></span>
+		<a id="vCBt">MOBILE</a><!--View Change Button--> </div>
+	<div id="tNme"><a id="prvs"><< BACK ||</a><span id="aInt">SEO Tools Collection</span><span id="empt"></span></div><!--Tab Name--> </div> </div></body> </html>
+
+
