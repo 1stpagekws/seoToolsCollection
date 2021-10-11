@@ -2,6 +2,12 @@
 include_once "Wa72/Url/Url.php";
 use \Wa72\Url\Url;
 
+function fetchPrductId () {
+	return "http://localhost"; }
+
+function fetchPrductName () {
+	return "1stPage KWs"; }
+
 function determineDiplaySizeToUse () {
 	//--567890-B34567890-C34567890-D34567890-E34567890-F34567890-G34567890-H34567890-I34567890->
 	// if desktop styling code is requested: make a record that future styling code to be used
@@ -41,15 +47,49 @@ function determineDiplaySizeToUse () {
 function prvideIdOfTheApprprStylngCode () {
 	// create info "styling code to yield"
 	$stylngCodeToYield = "";
-	$stylngCodeToYield = "x>mb.css";
+	$stylngCodeToYield = fetchPrductId () . "/tools/xeMble.css";
 
 	// if there is a record saying that the desktop styling code should be used, use the desktop
 	// styling code
 	if ($_COOKIE ["dsplaySize"] == "dsktop") {
-		$stylngCodeToYield = "x>ds.css"; }
+		$stylngCodeToYield = fetchPrductId () . "/tools/xlDskt.css"; }
 
 	// yield styling info
 	return $stylngCodeToYield; }
+
+function prvideIdOfTheApprprPrsnalStylngCode () {
+	// create info "styling code to yield"
+	$stylngCodeToYield = "";
+	$stylngCodeToYield = "xnPMbl.css";
+
+	// if there is a record saying that the desktop styling code should be used, use the desktop
+	// styling code
+	if ($_COOKIE ["dsplaySize"] == "dsktop") {
+		$stylngCodeToYield = "xpPDsk.css"; }
+
+	// yield styling info
+	return $stylngCodeToYield; }
+
+function gnrateHeader ($prvsIntrfcId, $label) {
+	$prductId = "";
+	$prductId = fetchPrductId ();
+	$prductName = "";
+	$prductName = fetchPrductName ();
+	$iconId = "";
+	$iconId = $prductId . "/tools/xtIcon.png";
+	$dsplaySizeChangeButton = "";
+	$dsplaySizeChangeButton = gnrateDsplaySizeChangeButton ();
+
+	return <<<BRDR
+		<div id="hder">
+			<div id="prfl">
+				<a id="name" href="{$prductId}"><img src="{$iconId}" /> <span id="text">
+				<!--C-->{$prductName}</span></a>
+				{$dsplaySizeChangeButton} </div>
+			<div id="tNme"><a id="prvs" href="{$prvsIntrfcId}"><< BACK ||</a>
+			<!--C--><span id="aInt">{$label}</span><span id="empt"></span></div>
+			<!--C--></div>
+BRDR; }
 
 function gnrateDsplaySizeChangeButton () {
 	$dsplaySizeChangeButton = "";
@@ -62,4 +102,4 @@ function gnrateDsplaySizeChangeButton () {
 		$prsentIntrfcId->setQueryParameter ("dsplaySize", "mobile");
 		$dsplaySizeChangeButton = "<a id='dSCB' href='{$prsentIntrfcId->write ()}'>MOBILE</a>";}
 
-	return $dsplaySizeChangeButton; } ?>
+	return $dsplaySizeChangeButton; }
