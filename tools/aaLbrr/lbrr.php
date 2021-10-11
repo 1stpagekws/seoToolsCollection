@@ -82,13 +82,12 @@ function gnrateHeader ($prvsIntrfcId, $label) {
 
 	return <<<BRDR
 		<div id="hder">
-			<div id="prfl">
-				<a id="name" href="{$prductId}"><img src="{$iconId}" /> <span id="text">
-				<!--C-->{$prductName}</span></a>
-				{$dsplaySizeChangeButton} </div>
-			<div id="tNme"><a id="prvs" href="{$prvsIntrfcId}"><< BACK ||</a>
+			<a id="name" href="{$prductId}"><img src="{$iconId}" /> <span id="text">
+			<!--C-->{$prductName}</span></a>
+			{$dsplaySizeChangeButton} </div>
+
+		<div id="tNme"><a id="prvs" href="{$prvsIntrfcId}"><< BACK</a>
 			<!--C--><span id="aInt">{$label}</span><span id="empt"></span></div>
-			<!--C--></div>
 BRDR; }
 
 function gnrateDsplaySizeChangeButton () {

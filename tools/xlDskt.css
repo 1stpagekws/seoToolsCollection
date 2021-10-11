@@ -7,15 +7,15 @@ body {
 	margin:auto;
 	font-family:'JetBrains Mono';}
 
-#hder {
-	background-color:#7470e6;
-	color:#ffffff;
-	padding-top:4mm;
-	padding-left:4mm;
-	padding-right:4mm;
-	padding-bottom:6mm;
-	border-radius:2mm;}
-	#prfl {
+	#hder {
+		background-color:#7470e6;
+		color:#ffffff;
+		padding-top:4mm;
+		padding-left:4mm;
+		padding-right:4mm;
+		padding-bottom:6mm;
+		border-radius:1mm;
+		border-bottom:2mm solid #F0C808;
 		display:flex;
 		justify-content:space-between;
 		align-items:center;}
@@ -42,12 +42,15 @@ body {
 			border-radius:1mm;
 			text-decoration:none;}
 	#tNme {
+		margin-top:16mm;
 		text-align:center;
 		font-weight:800;
+		color:#666666;
 		text-transform:uppercase;
-		display:flex;} #tNme > *{text-align:center; border-radius:2mm;}
+		display:flex;
+		margin-bottom:16mm;} #tNme > *{text-align:center; border-radius:2mm;}
 		#tNme #prvs {
-			color:#e0e0e0;
+			color:#666666;
 			width:25%;
 			text-decoration:none;}
 		#tNme #aInt {;
