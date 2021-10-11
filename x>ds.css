@@ -22,7 +22,9 @@ body {
 		#name {
 			display:flex;
 			align-items:center;
-			margin-bottom:4mm;}
+			margin-bottom:4mm;
+			color:#ffffff;
+			text-decoration:none;}
 			#name > img {
 				width:8mm;
 				height:8mm;
@@ -30,21 +32,24 @@ body {
 			#name #text {
 				font-size:6mm;
 				font-weight:800;}
-		#vCBt {
+		#dSCB {
 			margin-right:1mm;
 			color:#7470e6;
-			background:#ffffff;
+			background-color:#ffffff;
 			padding:2mm;
 			padding-left:6mm;
 			padding-right:6mm;
-			border-radius:1mm;} #dsplaySizeButton:active {background:#000000;}
+			border-radius:1mm;
+			text-decoration:none;}
 	#tNme {
 		text-align:center;
 		font-weight:800;
+		text-transform:uppercase;
 		display:flex;} #tNme > *{text-align:center; border-radius:2mm;}
 		#tNme #prvs {
 			color:#e0e0e0;
-			width:25%;}
+			width:25%;
+			text-decoration:none;}
 		#tNme #aInt {;
 			width:50%;
 			font-size:5mm;}

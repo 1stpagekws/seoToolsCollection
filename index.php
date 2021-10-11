@@ -12,8 +12,11 @@ determineDiplaySizeToUse (); ?>
 <body><div id="body">
 <div id="hder">
 	<div id="prfl">
-		<span id="name"><img src="z>ic.png" /> <span id="text">1stPage KWs</span></span>
-		<a id="vCBt">MOBILE</a><!--View Change Button--> </div>
-	<div id="tNme"><a id="prvs"><< BACK ||</a><span id="aInt">SEO Tools Collection</span><span id="empt"></span></div><!--Tab Name--> </div> </div></body> </html>
-
+		<a id="name" href="http://1stpagekws.com"><img src="x>ic.png" /> 
+		<!--C--><span id="text">1stPage KWs</span></a>
+		<?php
+		/*-++-*/echo gnrateDsplaySizeChangeButton (); ?><!--Display Size Change Button--> </div>
+	<div id="tNme"><a id="prvs" href="http://1stpagekws.com"><< BACK ||</a>
+	<!--C--><span id="aInt">SEO Tools Collection</span><span id="empt"></span></div>
+	<!--C--><!--Tab Name--> </div> </div></body> </html>
 

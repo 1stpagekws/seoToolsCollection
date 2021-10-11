@@ -1,4 +1,7 @@
 <?php
+include_once "Wa72/Url/Url.php";
+use \Wa72\Url\Url;
+
 function determineDiplaySizeToUse () {
 	//--567890-B34567890-C34567890-D34567890-E34567890-F34567890-G34567890-H34567890-I34567890->
 	// if desktop styling code is requested: make a record that future styling code to be used
@@ -38,12 +41,25 @@ function determineDiplaySizeToUse () {
 function prvideIdOfTheApprprStylngCode () {
 	// create info "styling code to yield"
 	$stylngCodeToYield = "";
-	$stylngCodeToYield = "z>mb.css";
+	$stylngCodeToYield = "x>mb.css";
 
 	// if there is a record saying that the desktop styling code should be used, use the desktop
 	// styling code
 	if ($_COOKIE ["dsplaySize"] == "dsktop") {
-		$stylngCodeToYield = "z>ds.css"; }
+		$stylngCodeToYield = "x>ds.css"; }
 
 	// yield styling info
 	return $stylngCodeToYield; }
+
+function gnrateDsplaySizeChangeButton () {
+	$dsplaySizeChangeButton = "";
+	$prsentIntrfcId = "";
+	$prsentIntrfcId = Url::parse ($_SERVER ["REQUEST_URI"]);
+	$prsentIntrfcId->setQueryParameter ("dsplaySize", "dsktop");
+	$dsplaySizeChangeButton = "<a id='dSCB' href='{$prsentIntrfcId->write ()}'>DESKTOP</a>";
+
+	if ($_COOKIE ["dsplaySize"] == "dsktop") {
+		$prsentIntrfcId->setQueryParameter ("dsplaySize", "mobile");
+		$dsplaySizeChangeButton = "<a id='dSCB' href='{$prsentIntrfcId->write ()}'>MOBILE</a>";}
+
+	return $dsplaySizeChangeButton; } ?>
