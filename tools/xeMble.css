@@ -21,15 +21,17 @@ body {
 			display:flex;
 			align-items:center;
 			margin-bottom:4mm;
-			color:#ffffff;
+			color:#7470e6;
 			text-decoration:none;}
 			#name > img {
 				width:8mm;
 				height:8mm;
 				margin-right:4mm;}
 			#name #text {
+				color:#7470e6;
 				font-size:6mm;
-				font-weight:800;}
+				font-weight:800;
+				text-transform:uppercase;}
 		#dSCB {
 			margin-right:1mm;
 			color:#7470e6;
@@ -38,12 +40,12 @@ body {
 			padding-left:6mm;
 			padding-right:6mm;
 			border-radius:1mm;
-			text-decoration:none;}
+			text-decoration:none;} #dSCB:active {background-color:#e6ad70;}
 	#tNme {
 		text-align:center;
 		font-weight:800;
 		text-transform:uppercase;
-		display:flex;} #tNme > *{text-align:center; border-radius:2mm;}
+		display:flex;} #tNme > * {text-align:center; border-radius:2mm;}
 		#tNme #prvs {
 			color:#e0e0e0;
 			width:25%;

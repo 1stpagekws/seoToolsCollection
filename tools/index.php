@@ -9,6 +9,7 @@ determineDiplaySizeToUse (); ?>
 <title><?php echo fetchPrductName (); ?> || SEO Tools Collection</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 <link rel="stylesheet" href="<?php echo prvideIdOfTheApprprStylngCode (); ?>" />
 <link rel="stylesheet" href="<?php echo prvideIdOfTheApprprPrsnalStylngCode (); ?>" /> </head>
 
@@ -19,7 +20,7 @@ determineDiplaySizeToUse (); ?>
 		<span id="bnd1">
 		<!--C-->
 			<a id="itm1" class="grp1 tam1" href="">
-				<img src="xwBckg.png" />
+				<img src="xwBck1.png" />
 				<span>Anchor Text Generator</span> </a>
 
 		<!--C-->
@@ -30,7 +31,7 @@ determineDiplaySizeToUse (); ?>
 
 		<!--C-->
 			<a id="itm4" class="grp1 tam1" href="">
-				<img src="xwBckg.png" />
+				<img src="xwBck2.png" />
 				<span>Penalty Check</span> </a> </span>
 
 		<span id="bnd2">
@@ -38,10 +39,10 @@ determineDiplaySizeToUse (); ?>
 			<span
 			   id="pck2">
 			<a id="itm5" class="grp2 tam2" href="">
-				<img src="xwBckg.png" />
+				<img src="xwBck3.png" />
 				<span>Rank Tracker</span> </a>
 			<a id="itm6" class="grp2 tam1" href="">
-				<img src="xwBckg.png" />
+				<img src="xwBck4.png" />
 				<span>Site Grader</span> </a> </span>
 
 		<!--C-->
@@ -50,4 +51,4 @@ determineDiplaySizeToUse (); ?>
 			<a id="itm7" class="tam2" href="">Spinax Tool            </a>
 			<a id="itm8" class="tam1" href="">Suggest Scraper        </a> </span> </span> </div>
 
-			<!--C--></body> </html>
+	<hr id="lne2" /> </body> </html>

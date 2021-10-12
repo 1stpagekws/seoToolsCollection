@@ -1,60 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Teko&display=swap');
+@import url('https://fonts.googleapis.com/css?family=JetBrains+Mono&display=swap');
+
 body {
 	margin:0px; } #body {
 	margin:0px;
 	padding:0px;
 	width:98%;
-	max-width: 300mm;
+	max-width: 320mm;
 	margin:auto;
 	font-family:'JetBrains Mono';}
 
 	#hder {
-		background-color:#7470e6;
-		color:#ffffff;
-		padding-top:4mm;
-		padding-left:4mm;
-		padding-right:4mm;
-		padding-bottom:6mm;
-		border-radius:1mm;
-		border-bottom:2mm solid #F0C808;
 		display:flex;
 		justify-content:space-between;
 		align-items:center;}
-		#name {
+		#ttle {
 			display:flex;
-			align-items:center;
-			margin-bottom:4mm;
-			color:#ffffff;
-			text-decoration:none;}
-			#name > img {
-				width:8mm;
-				height:8mm;
-				margin-right:4mm;}
-			#name #text {
+			align-items:center;}
+			#icon {
+				margin-right:2mm;}
+				#icon img {
+					width:12mm;
+					height:12mm;}
+			#text {
+				display:block;
+				color:#000000;
+				font-size:10mm;
+				font-weight:800;
+				text-decoration:none;
+				text-transform:uppercase;
+				margin-right:8mm;
+				font-family:'Teko';}
+			#aInt {
 				font-size:6mm;
-				font-weight:800;}
-		#dSCB {
-			margin-right:1mm;
-			color:#7470e6;
-			background-color:#ffffff;
-			padding:2mm;
-			padding-left:6mm;
-			padding-right:6mm;
-			border-radius:1mm;
-			text-decoration:none;}
-	#tNme {
-		margin-top:16mm;
-		text-align:center;
-		font-weight:800;
-		color:#666666;
-		text-transform:uppercase;
-		display:flex;
-		margin-bottom:16mm;} #tNme > *{text-align:center; border-radius:2mm;}
-		#tNme #prvs {
-			color:#666666;
-			width:25%;
-			text-decoration:none;}
-		#tNme #aInt {;
-			width:50%;
-			font-size:5mm;}
-		#tNme #empt {
-			width:25%;}
+				text-align:left;
+				font-weight:800;
+				text-transform:uppercase;
+				font-family:'Teko';
+				color:#7470e6;}
+
+		#bttn {}
+			#prvs {
+				color:#ffffff;
+				background-color:#000000;
+				border-radius:1mm;
+				text-decoration:none;
+				text-align:center;
+				padding:3mm;} #prvs:hover {
+					background:#000000 !important; color:#7470e6;} #dSCB:active {
+					background:#000000 !important; color:#7470e6;}
+
+			#dSCB {
+				text-align:center;
+				color:#ffffff;
+				background-color:#000000;
+				padding:3mm;
+				border-radius:1mm;
+				text-decoration:none;} #dSCB:hover {
+					background:#000000 !important; color:#7470e6;} #dSCB:active {
+					background:#000000 !important; color:#7470e6;}
+
+	#line {
+		height:1mm;
+		color:#000000;
+		background-color:#000000;
+		margin-bottom:16mm;
+		border-radius:2mm;
+		border:0px solid #000000;}
