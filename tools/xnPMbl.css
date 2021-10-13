@@ -1,0 +1,134 @@
+#cntn {
+	display:block;
+	margin-bottom:4mm;
+	padding-top:26mm;} #cntn a {
+	text-align:center;
+	text-decoration:none;
+	text-transform:uppercase;
+	font-size:2mm;
+	color:#808080;
+	border-radius:2mm;} #cntn a:hover {
+		background:#000000 !important; color:#7470e6;} #cntn a:active {
+		background:#000000 !important; color:#7470e6;}
+
+	.grp1 {
+		display:flex;
+		flex-direction:column;
+		width:46%;
+		padding:1%;
+		border-radius:2mm;}
+		.grp1 > img {
+			border-radius:1mm;
+			width:100%;
+			height:24mm;}
+		.grp1 > span {
+			display:block;
+			padding-top:2mm;
+			padding-bottom:2mm;}
+			margin-left:2%;
+			text-align:center;
+			width:50%;}
+	.tam1 {
+		background-color:#EEEEFC;
+		border:2px solid #404040;
+		font-weight:800;
+		font-size:2mm !important;}
+
+	.tam2 {
+		background-color:#EEEEFC;
+		border:2px solid #404040;
+		font-weight:800;
+		font-size:2mm !important;}
+
+	#itm1 {
+		margin-bottom:2mm;
+		background-color:#202020 !important;
+		border:2px solid #079FC5;}
+	
+	#pck1 {
+		width:100%;
+		margin:auto;
+		display:flex;
+		justify-content:space-between !important;
+		margin-bottom:2mm;}
+	#itm2 {
+		width:48%;
+		padding:0mm;
+		padding-top:16mm;
+		padding-bottom:16mm;
+		background:#011313;
+		color:#ffffff;
+		background-size:cover;
+		background-position: center;}
+	#itm3 {
+		width:48%;
+		padding:0mm;
+		padding-top:16mm;
+		padding-bottom:16mm;
+		background:#011313;
+		color:#ffffff;
+		background-size:cover;
+		background-position: center;}
+
+	#itm4 {
+		margin-bottom:2mm;
+		margin-left:50%;
+		background-color:#202020 !important;
+		border:2px solid #011313;}
+
+	#pck2 {
+		display:flex;
+		justify-content:space-between;
+		width:100%;
+		margin-bottom:2mm;}
+
+	.grp2 {
+		padding:1%;
+		padding-bottom:0mm;
+		width:46%;
+		display:flex;
+		color:#666666;
+		flex-direction:column;}
+		.grp2 img {
+			width:100%;
+			height:24mm;}
+		.grp2 span {
+			display:block;
+			padding-top:2mm;
+			padding-bottom:2mm;}
+
+	#itm5 {
+		border:1px solid #666666;
+		border-radius:2mm !important;
+		background-color:#202020 !important;
+		border:2px solid #47B5D7;}
+
+	#itm6 {
+		border-radius:2mm !important;
+		background-color:#202020 !important;
+		border:2px solid #1B9BB1;}
+
+	#pck3 {
+		display:flex;
+		justify-content:space-between;
+		width:100%;}
+
+	#itm7 {
+		width:48%;
+		padding:0mm;
+		padding-top:16mm;
+		padding-bottom:16mm;
+		color:#ffffff;
+		background:#011313;
+		background-size:cover;
+		background-position: center;}
+
+	#itm8 {
+		width:48%;
+		padding:0mm;
+		padding-top:16mm;
+		padding-bottom:16mm;
+		color:#ffffff;
+		background:#011313;
+		background-size:cover;
+		background-position: center;}

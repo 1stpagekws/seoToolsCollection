@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Teko&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css?family=JetBrains+Mono&display=swap');
 
 body {
@@ -12,6 +12,9 @@ body {
 
 	#hder {
 		display:flex;
+		padding:0mm;
+		padding-top:4mm;
+		padding-bottom:2mm;
 		justify-content:space-between;
 		align-items:center;}
 		#ttle {
@@ -24,46 +27,54 @@ body {
 					height:12mm;}
 			#text {
 				display:block;
-				color:#000000;
+				color:#808080;
 				font-size:10mm;
 				font-weight:800;
 				text-decoration:none;
 				text-transform:uppercase;
 				margin-right:8mm;
-				font-family:'Teko';}
+				font-family:'Righteous';}
 			#aInt {
-				font-size:6mm;
+				font-size:4mm;
 				text-align:left;
 				font-weight:800;
 				text-transform:uppercase;
-				font-family:'Teko';
-				color:#7470e6;}
+				font-family:'Righteous';
+				color:#888888;}
 
 		#bttn {}
 			#prvs {
 				color:#ffffff;
-				background-color:#000000;
-				border-radius:1mm;
+				background-color:#7470e6;
+				border-radius:2mm;
+				padding:3mm;
+				padding-left:6mm;
+				padding-right:7mm;
 				text-decoration:none;
-				text-align:center;
-				padding:3mm;} #prvs:hover {
-					background:#000000 !important; color:#7470e6;} #dSCB:active {
-					background:#000000 !important; color:#7470e6;}
+				text-align:center;} #prvs:active {
+					background:#808080 !important;}
 
 			#dSCB {
 				text-align:center;
 				color:#ffffff;
-				background-color:#000000;
+				background-color:#7470e6;
 				padding:3mm;
-				border-radius:1mm;
-				text-decoration:none;} #dSCB:hover {
-					background:#000000 !important; color:#7470e6;} #dSCB:active {
-					background:#000000 !important; color:#7470e6;}
+				padding-left:6mm;
+				padding-right:6mm;
+				border-radius:2mm;
+				text-decoration:none;} #dSCB:active {
+					background:#808080 !important;}
 
 	#line {
-		height:1mm;
-		color:#000000;
-		background-color:#000000;
+		height:2px;
+		background-color:#808080;
+		margin-bottom:1mm;
+		border-radius:2mm;
+		border:0px solid #000000;}
+
+	#lne2 {
+		height:2px;
+		background-color:#808080;
 		margin-bottom:16mm;
 		border-radius:2mm;
 		border:0px solid #000000;}

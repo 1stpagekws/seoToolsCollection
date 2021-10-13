@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Tourney&display=swap');
+
+#cntn {}
+	#note {
+		text-align:center;
+		max-width:200mm;
+		display:block;
+		margin:auto;
+		margin-bottom:16mm;}
+
+	#tool {
+		display:flex;
+		justify-content:space-between;}
+		#sde1 {
+			width:50%;
+			text-align:center;}
+			#inpt {
+				width:98%;
+				padding:1%;
+				height:96mm;
+				border:1px solid #909090;
+				border-radius:2mm;
+				margin-bottom:2mm;}
+			#kWrd {
+				width:50%;
+				padding:1%;
+				border:1px solid #909090;
+				border-radius:1mm;
+				height:8mm;
+				text-align:center;}
+		#sde2 {
+			width:49%;
+			text-align:center;
+			display:flex;
+			flex-direction:column;}
+			#dnst {
+				display:block;
+				padding:1%;
+				padding-left:0px;
+				padding-right:0px;
+				font-family:'Tourney';
+				margin-bottom:4mm;}
+				#whle {
+					padding:0px !important;
+					line-height:96mm;padding-left:0px;
+					letter-spacing:-16px;
+					font-size:64mm;}
+				#dcml {
+					font-size:16mm;}
+			#keys {
+				width:100%;
+				display:flex;
+				justify-content:space-between;}
+				#keys button {
+					height:12mm;
+					border:0px solid #909090;
+					background-color:#7470e6;
+					font-size:4mm;
+					font-family:'JetBrains Mono';
+					color:#ffffff;
+					font-weight:400;
+					border-radius:1mm;} #keys button:active {
+						background:#000000 !important; color:#7470e6;}
+				#gooo {
+					padding:1%;
+					width:50%;}
+				#clar {
+					padding:1%;
+					width:49%;}

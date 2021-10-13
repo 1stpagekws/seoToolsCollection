@@ -8,8 +8,6 @@ determineDiplaySizeToUse (); ?>
 <head>
 <title><?php echo fetchPrductName (); ?> || SEO Tools Collection</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 <link rel="stylesheet" href="<?php echo prvideIdOfTheApprprStylngCode (); ?>" />
 <link rel="stylesheet" href="<?php echo prvideIdOfTheApprprPrsnalStylngCode (); ?>" /> </head>
 
@@ -26,7 +24,7 @@ determineDiplaySizeToUse (); ?>
 		<!--C-->
 			<span
 			   id="pck1">
-			<a id="itm2" class="tam2" href="">Keyword Density Checker</a>
+			<a id="itm2" class="tam2" href="keyword-density-checker">Keyword Density Checker</a>
 			<a id="itm3" class="tam2" href="">Keyword Research       </a> </span>
 
 		<!--C-->
@@ -51,4 +49,4 @@ determineDiplaySizeToUse (); ?>
 			<a id="itm7" class="tam2" href="">Spinax Tool            </a>
 			<a id="itm8" class="tam1" href="">Suggest Scraper        </a> </span> </span> </div>
 
-	<hr id="lne2" /> </body> </html>
+	</body> </html>
