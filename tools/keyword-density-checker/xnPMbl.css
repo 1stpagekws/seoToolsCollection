@@ -16,9 +16,9 @@
 		color:#404040;
 		margin:auto;
 		width:95%;
-		font-size:1mm;
+		font-size:3mm;
 		padding-top:6mm;
-		margin-bottom:4mm;}
+		margin-bottom:4mm}
 
 	#tool {
 		display:flex;
@@ -27,8 +27,7 @@
 		#sde1 {
 			width:95%;
 			margin:auto;
-			text-align:center;
-			margin-bottom:8mm;}
+			text-align:center;}
 			#inpt {
 				width:97%;
 				padding:1%;
@@ -51,7 +50,6 @@
 			margin:auto;
 			text-align:center;
 			display:flex;
-			margin-bottom:8mm;
 			flex-direction:column;}
 			#dnst {
 				text-align:center;
