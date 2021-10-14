@@ -3,16 +3,24 @@
 
 #cntn {
 	margin-bottom:4mm;
-	padding-top:20mm;} #cntn * {
-		font-family:'Open Sans'; font-size:3mm;}
+	padding-top:20mm;
+	font-size:3mm;
+	font-family:'Open Sans';
+	color:#404040;} #cntn * {
+		font-family:'Open Sans';}
 
 	#note {
 		width:95%;
 		margin:auto;
 		margin-top:2mm;
+		margin-bottom:2mm;
+		border-bottom:4px solid #7470e6;
+		display:block;
 		font-family:'Open Sans';
-		text-align:center;
-		color:#404040;
+		text-align:justify;
+		padding-bottom:1mm;
+		text-align-last: center;
+		color:#000000;
 		font-size:3mm;}
 
 	#tool {}
@@ -24,20 +32,24 @@
 				width:97%;
 				margin:auto;
 				margin-bottom:2mm;
-				height:20mm;} textarea {
-					background-color:#ffffff; color:#404040; padding:1%; border-radius:1mm;
-					border:1px solid #404040;}
+				height:30mm;} textarea {
+					background-color:#ffffff;
+					color:#404040;
+					padding:1%;
+					font-size:3mm;
+					border-radius:3px;
+					border:2px solid #7470e6;}
 			#cntn_sde1_txt2 {
 				width:97%;
 				margin:auto;
 				margin-bottom:2mm;
-				height:20mm;}
+				height:30mm;}
 			#cntn_sde1_itm3 {
 				width:97%;
 				display:block;
 				text-align:center;
 				margin:auto;
-				margin-bottom:4mm;
+				margin-bottom:1mm;
 				color:#404040;
 				text-align:center;}
 				#cntn_sde1_itm3 #tkn1 {
@@ -57,22 +69,22 @@
 			flex-direction:column;
 			align-items:center;}
 			#cntn_sde2_itm0 {
+				display:none;
 				font-size:6mm;
 				font-weight:900;
 				margin:auto;
 				margin-bottom:2mm;
-				display:block;
 				order:1;
 				color:#404040;
 				justify-content: space-around;}		
 			#cntn_sde2_itm1 {
 				width:97%;
 				padding:1%;
-				height:20mm;
+				height:30mm;
 				margin:auto;
 				margin-bottom:8mm;
 				order:2;
-				border:1px solid #404040;}
+				border:2px solid #7470e6;}
 			#cntn_sde2_itm2 {
 				display:block;
 				margin:auto;
@@ -86,7 +98,7 @@
 					padding-bottom:4mm;
 					order:2;
 				} button {border:0px solid #222222; background-color:#7470e6; border-radius:1mm;
-					font-weight:900; font-size:4mm; color:#ffffff;} button:active {
+					font-weight:900; font-size:3mm; color:#ffffff;} button:active {
 						background-color:#352FDA;}
 				#btn2 {
 					width:49%;

@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=JetBrains+Mono&display=swap');
 
 #note {
 	max-width: 200mm;
 	width:98%;
 	margin:auto;
-	font-size:6mm;
+	font-size:4mm;
 	margin-top: 64px;
 	font-family:'Open Sans';
 	text-align:center;
@@ -81,9 +82,15 @@
 				width:48%;
 				height:12mm;
 				order:2;
-			} #cntn_sde2_itm2 button {border:0mm solid #222222; background-color:#7470e6;
-				border-radius:1mm; font-size:4mm; color:#ffffff;}
-				#cntn_sde2_itm2 button:active {background-color:#352FDA;}
+			} #cntn_sde2_itm2 button {
+				border:0mm solid #222222;
+				background-color:#7470e6;
+				border-radius:1mm;
+				font-family:'JetBrains Mono' !important;
+				font-size:4mm;
+				color:#ffffff;}
+				#cntn_sde2_itm2 button:active {
+				background-color:#352FDA;}
 			#btn2 {
 				width:50%;
 				order:1;

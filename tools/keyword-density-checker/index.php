@@ -12,9 +12,10 @@ determineDiplaySizeToUse (); ?>
 <link rel="stylesheet" href="<?php echo prvideIdOfTheApprprStylngCode (); ?>" />
 <link rel="stylesheet" href="<?php echo prvideIdOfTheApprprPrsnalStylngCode (); ?>" />
 <script type="text/javascript">
+
 	function prcess () {
-		document.getElementById ("inpt").style.border = "1px solid #404040";
-		document.getElementById ("kWrd").style.border = "1px solid #404040";
+		document.getElementById ("inpt").style.borderColor = "#404040";
+		document.getElementById ("kWrd").style.borderColor = "#404040";
 	
 		//|| CNTENT ||
 		var prcssdContent;
@@ -27,18 +28,20 @@ determineDiplaySizeToUse (); ?>
 			kyword = document.getElementById ("kWrd").value;
 			kyword = kyword.trim ();
 			if (kyword.length > 0) {
-				document.getElementById ("inpt").style.border = "1px solid #F17300";
+				document.getElementById ("inpt").style.borderColor = "#ff0000";
 				return;
 			}
 
 			return;
 		}
 
-		prcssdContent = prcssdContent + " ";
-
 		var _yeld1 = prcssdContent.replace (/\s{2,}/g, " ");
-		prcssdContent = _yeld1;
-		
+		var _yeld2 = _yeld1.replace (/\./g, "");
+		var _yeld3 = _yeld2.replace (/\?/g, "");
+		var _yeld4 = _yeld3.replace (/!/g,  "");
+		prcssdContent = _yeld4;
+
+		prcssdContent = " " + prcssdContent + " ";
 		//|| KYWORD ||		
 		var prcssdKyword;
 		prcssdKyword = document.getElementById ("kWrd").value;
@@ -46,42 +49,47 @@ determineDiplaySizeToUse (); ?>
 		prcssdKyword.trim ();
 
 		if (prcssdKyword.length == 0) {
-			document.getElementById ("kWrd").style.border = "1px solid #F17300";
+			document.getElementById ("kWrd").style.borderColor = "#ff0000";
 			return;
 		}
-
-		prcssdKyword = prcssdKyword + " ";
 
 		var _yeld3 = prcssdKyword.replace (/\s{2,}/g, " ");
 		prcssdKyword = _yeld3;
 
-		if (! /^[a-zA-Z0-9]+(\-[a-zA-Z0-9]+)* ([a-zA-Z0-9]+(\-[a-zA-Z0-9]+)* )*$/gm.test
+		prcssdKyword = " " + prcssdKyword + " ";
+
+		if (! /^ [a-zA-Z0-9]+(\-[a-zA-Z0-9]+)*( [a-zA-Z0-9]+(\-[a-zA-Z0-9]+)*)* $/gm.test
 			(prcssdKyword)) {
-			document.getElementById ("kWrd").style.border = "1px solid #F17300";
+			document.getElementById ("kWrd").style.borderColor = "#ff0000";
 			return;
 		}
 
 		//|| CLCLTE ||
-		var _yeld4 = prcssdContent.split (" ");
+		var _yeld4 = prcssdContent.trim ().split (" ");
 		var cntntsCrdnlt;
-		cntntsCrdnlt = _yeld4.length - 1;
+		cntntsCrdnlt = _yeld4.length;
 
 		var occrnc;
 		occrnc = 0;
 		var pttern;
 		var kywordPttern;
 		kywordPttern = prcssdKyword.replace (/\-/gi, "\\-");
-		pttern = new RegExp (kywordPttern, "g");
+		kywordPttern = kywordPttern;
+		pttern = new RegExp (kywordPttern, "gi");
 		while (pttern.test (prcssdContent)) {
 			occrnc = occrnc + 1;
 		}
+		//alert (occrnc);
+
 		
-		var _yeld5 = prcssdKyword.split (" ");
-		cntntsCrdnlt = cntntsCrdnlt - (occrnc * (_yeld5.length - 2));
+		var _yeld5 = prcssdKyword.trim ().split (" ");
+		cntntsCrdnlt = cntntsCrdnlt - (occrnc * (_yeld5.length - 1));
+		//alert (cntntsCrdnlt);
 
 		var dnsity;
 		dnsity = (occrnc / cntntsCrdnlt) * 100;
 		dnsity = dnsity.toFixed (2);
+		//alert (dnsity);
 
 		//|| RESULT ||
 		var output;
@@ -96,8 +104,8 @@ determineDiplaySizeToUse (); ?>
 	}
 
 	function clearX () {
-		document.getElementById ("inpt").style.border = "1px solid #404040";
-		document.getElementById ("kWrd").style.border = "1px solid #404040";
+		document.getElementById ("inpt").style.borderColor = "#404040";
+		document.getElementById ("kWrd").style.borderColor = "#404040";
 
 		document.getElementById ("inpt").value = "";
 		document.getElementById ("kWrd").value = "";
@@ -111,9 +119,9 @@ determineDiplaySizeToUse (); ?>
 	<?php echo gnrateHeader (fetchPrductId () . "/tools", "Keyword Density Checker"); ?>
 
 	<div id="cntn">
-		<div id="note">Stop! You do not have to count all the words in your article, to know
-			the keyword density. Supply me the text and the keyword - I will do the
-			calculation for you.</div>
+		<div id="note">Google and other top search engines recommend having keyword densities
+between 1 - 8 percent. Anything outside the range may result in a poor SEO rank. I help to
+calculate keyword densities, thereby helping to improve SEO rankings on SERP.</div>
 
 		<div id="tool">
 			<span id="sde1">
@@ -124,7 +132,7 @@ determineDiplaySizeToUse (); ?>
 			<span id="sde2">
 				<span id="dnst"><span id="whle">--</span><span id="dcml">.--</span></span>
 				<span id="keys">
-					<button id="gooo" name="gooo" onclick="prcess ();">GO!  </button>
+					<button id="gooo" name="gooo" onclick="prcess ();">GO!</button>
 					<button id="clar" name="clar" onclick="clearX ();">CLEAR</button> </span>
 
 					</span> </div> </div> </div> </body>

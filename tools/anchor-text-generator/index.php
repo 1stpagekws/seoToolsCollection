@@ -163,21 +163,16 @@ determineDiplaySizeToUse (); ?>
 	<?php echo gnrateHeader (fetchPrductId () . "/tools", "Anchor Text Generator"); ?>
 
 	<div id="cntn">
-		<div id="note">Stop! You do not have to count all the words in your article, to know
-			the keyword density. Supply me the text and the keyword - I will do the
-			calculation for you.</div>
+		<div id="note">Hey there! I am Chloe - I am your anchor text generator assistant. I
+will help you navigate the hassle of generating the perfect anchor text for your project. Google
+wants good SEO anchor codes. I can help you generate them, thereby helping to improve SEO
+rankings on SERP.</div>
 
 		<div id="tool">
 		    <div id="cntn_sde1">
-        		<textarea id="cntn_sde1_txt1" name="link" placeholder="Enter a link [any link]
+        		<textarea id="cntn_sde1_txt1" name="link" placeholder="You may enter multiple links: 1 link per line / 1,000 links max"></textarea> <br />
 
-You may enter additional links under the first
-[1 link per line; 1,000 links max]"></textarea> <br />
-
-		        <textarea id="cntn_sde1_txt2" name="name" placeholder="Enter link's name
-
-If there are additional links, enter their corresponding names
-[1 name per line; 1,000 names max]"></textarea> <br />
+		        <textarea id="cntn_sde1_txt2" name="name" placeholder="Enter corresponding names: 1 per line / 1,000 names max"></textarea> <br />
 
 			    <span id="cntn_sde1_itm3">
 			    <!--C--><span id="tkn1">When clicked, should the link open in a new tab?
@@ -191,9 +186,7 @@ If there are additional links, enter their corresponding names
 				<span id="cntn_sde2_itm0">RESULT</span>
 
 				<textarea id="cntn_sde2_itm1" name="otpt"
-						placeholder="I post my errors and results here
-
-See the 'Generate' button below" disabled></textarea>
+						placeholder="I post my errors and results here. See the 'Generate' button below" disabled></textarea>
 					<br />
 
 			    <span id="cntn_sde2_itm2">

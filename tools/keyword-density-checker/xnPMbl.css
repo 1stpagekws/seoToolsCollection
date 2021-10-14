@@ -7,18 +7,22 @@
 	color:#404040;
 	padding-top:20mm;
 	font-family:'Open Sans';
-	font-size:3mm;} #cntn * {font-family:'Open Sans';}
+	font-size:3mm;} #cntn * {
+		font-family:'Open Sans';}
 
 	#note {
+		text-align:justify;
+		text-align-last:center;
 		display:block;
-		text-align:center;
 		display:block;
 		color:#404040;
+		border-bottom:4px solid #7470e6;
 		margin:auto;
 		width:95%;
+		padding-bottom:1mm;
 		font-size:3mm;
-		padding-top:6mm;
-		margin-bottom:4mm}
+		margin-top:2mm;
+		margin-bottom:2mm}
 
 	#tool {
 		display:flex;
@@ -31,17 +35,19 @@
 			#inpt {
 				width:97%;
 				padding:1%;
-				height:32mm;
+				height:40mm;
+				font-size:3mm;
 				color:#808080;
-				border:1px solid #404040;
+				border:2px solid #7470e6;
 				border-radius:1mm;
 				margin-bottom:2mm;}
 
 			#kWrd {
-				width:50%;
+				width:40%;
 				padding:1%;
 				color:#808080;
-				border:1px solid #404040;
+				font-size:3mm;
+				border:2px solid #7470e6;
 				border-radius:1mm;
 				height:8mm;
 				text-align:center;}
