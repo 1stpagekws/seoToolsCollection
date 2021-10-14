@@ -169,13 +169,15 @@ determineDiplaySizeToUse (); ?>
 
 		<div id="tool">
 		    <div id="cntn_sde1">
-        		<textarea id="cntn_sde1_txt1" name="link" placeholder="Enter your link;
-You may enter additional links under the first
-[1 link per line; 1,000 links max]."></textarea> <br />
+        		<textarea id="cntn_sde1_txt1" name="link" placeholder="Enter a link [any link]
 
-		        <textarea id="cntn_sde1_txt2" name="name" placeholder="Enter link's name;
+You may enter additional links under the first
+[1 link per line; 1,000 links max]"></textarea> <br />
+
+		        <textarea id="cntn_sde1_txt2" name="name" placeholder="Enter link's name
+
 If there are additional links, enter their corresponding names
-[1 name per line; 1,000 names max]."></textarea> <br />
+[1 name per line; 1,000 names max]"></textarea> <br />
 
 			    <span id="cntn_sde1_itm3">
 			    <!--C--><span id="tkn1">When clicked, should the link open in a new tab?
@@ -186,10 +188,12 @@ If there are additional links, enter their corresponding names
        					</span> </div>
 
 			<div id="cntn_sde2">
-				<span id="cntn_sde2_itm0">— RESULT —</span>
+				<span id="cntn_sde2_itm0">RESULT</span>
 
 				<textarea id="cntn_sde2_itm1" name="otpt"
-						placeholder="I WILL POST MY ERROR OR RESULT HERE." disabled></textarea>
+						placeholder="I post my errors and results here
+
+See the 'Generate' button below" disabled></textarea>
 					<br />
 
 			    <span id="cntn_sde2_itm2">

@@ -117,8 +117,8 @@ determineDiplaySizeToUse (); ?>
 
 		<div id="tool">
 			<span id="sde1">
-				<textarea id="inpt" name="text" placeholder="Put your text here."></textarea>
-				<input id="kWrd" name="kWrd" type="text" placeholder="Enter you keyword here."/>
+				<textarea id="inpt" name="text" placeholder="Put your text here"></textarea>
+				<input id="kWrd" name="kWrd" type="text" placeholder="Enter you keyword here"/>
 					</span>
 
 			<span id="sde2">

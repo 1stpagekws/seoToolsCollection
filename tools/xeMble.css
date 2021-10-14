@@ -71,7 +71,7 @@ body {
 				text-align:center;
 				color:#ffffff;
 				margin-right:1mm;
-				background-color:#8986EA;
+				background-color:#7470e6;
 				padding:2mm;
 				font-size:1mm;
 				padding-left:6mm;
@@ -80,7 +80,7 @@ body {
 				order:1;
 				font-weight:600;
 				text-decoration:none;} #dSCB:active {
-					background:#7470e6 !important; color:#ffffff;}
+					background:#352FDA !important; color:#ffffff;}
 
 	#line {
 		display:none;}

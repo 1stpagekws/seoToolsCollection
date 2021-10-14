@@ -1,47 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=JetBrains+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Kelly+Slab&display=swap');
 
 #cntn {
-	display:block;
-	color:#808080;
-	padding-top:26mm;}
+	margin-bottom:4mm;
+	color:#404040;
+	padding-top:20mm;
+	font-family:'Open Sans';
+	font-size:3mm;} #cntn * {font-family:'Open Sans';}
+
 	#note {
 		display:block;
 		text-align:center;
-		max-width:200mm;
 		display:block;
 		color:#404040;
 		margin:auto;
+		width:95%;
 		font-size:1mm;
 		padding-top:6mm;
-		margin-bottom:8mm;}
+		margin-bottom:4mm;}
+
 	#tool {
 		display:flex;
 		flex-direction:column;
 		justify-content:space-between;}
 		#sde1 {
-			width:99%;
+			width:95%;
+			margin:auto;
 			text-align:center;
 			margin-bottom:8mm;}
 			#inpt {
-				width:96%;
-				padding:2%;
+				width:97%;
+				padding:1%;
 				height:32mm;
 				color:#808080;
-				border:1px solid #808080;
+				border:1px solid #404040;
 				border-radius:1mm;
-				margin-bottom:2mm;} #inpt:focus {
-					border:1px dashed red;
-					box-shadow: 0px 1px #808080;}
+				margin-bottom:2mm;}
+
 			#kWrd {
 				width:50%;
 				padding:1%;
 				color:#808080;
-				border:1px solid #808080;
+				border:1px solid #404040;
 				border-radius:1mm;
 				height:8mm;
 				text-align:center;}
 		#sde2 {
-			width:99%;
+			width:95%;
+			margin:auto;
 			text-align:center;
 			display:flex;
 			margin-bottom:8mm;
@@ -53,7 +60,6 @@
 				padding-left:0px;
 				line-height:32mm;
 				padding-right:0px;
-				font-family:'Kelly Slab';
 				margin-bottom:4mm;}
 				#whle {
 					padding:0px !important;
@@ -61,10 +67,12 @@
 					padding-left:0px;
 					font-weight:100;
 					padding-right:0px;
+					font-family:'Kelly Slab' !important;
 					letter-spacing:0px;
 					font-size:32mm;}
 				#dcml {
 					line-height:32mm;
+					font-family:'Kelly Slab' !important;
 					vertical-align:text-bottom;
 					font-size:16mm;}
 			#keys {
@@ -72,7 +80,9 @@
 				display:flex;
 				justify-content:space-between;}
 				#keys button {
-					height:12mm;
+					padding:1%;
+					padding-top:3mm;
+					padding-bottom:4mm;
 					border:0px solid #c0c0c0;
 					background-color:#7470e6;
 					font-size:4mm;
@@ -80,10 +90,8 @@
 					color:#ffffff;
 					font-weight:400;
 					border-radius:1mm;} #keys button:active {
-						background:#000000 !important; color:#7470e6;}
+						background:#352FDA !important; color:#ffffff;}
 				#gooo {
-					padding:1%;
 					width:50%;}
 				#clar {
-					padding:1%;
 					width:49%;}

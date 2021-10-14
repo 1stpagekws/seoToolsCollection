@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Kelly+Slab&display=swap');
-@import url('https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 #cntn {
 	color:#404040;}
@@ -9,7 +9,7 @@
 		display:block;
 		margin:auto;
 		font-size:6mm;
-		font-family:'ZCOOL KuaiLe';
+		font-family:'Open Sans';
 		color:#404040;
 		margin-bottom:16mm;}
 
@@ -17,13 +17,13 @@
 		display:flex;
 		justify-content:space-between;}
 		#sde1 {
-			font-family:'ZCOOL KuaiLe';
+			font-family:'Open Sans';
 			width:50%;
 			text-align:center;}
 			#inpt {
 				width:98%;
 				padding:1%;
-				font-family:'ZCOOL KuaiLe';
+				font-family:'Open Sans';
 				color:#404040;
 				height:96mm;
 				font-size:4mm;
@@ -35,7 +35,7 @@
 				padding:1%;
 				font-size:4mm;
 				border:1px solid #909090;
-				font-family:'ZCOOL KuaiLe';
+				font-family:'Open Sans';
 				border-radius:1mm;
 				color:#404040;
 				height:8mm;

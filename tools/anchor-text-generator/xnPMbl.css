@@ -1,110 +1,96 @@
 @import url('https://fonts.googleapis.com/css?family=Audiowide&display=swap');
-@import url('https://fonts.googleapis.com/css?family=JetBrains+Mono&display=swap');
-
-body {
-	background-color: #ffffff;
-	color: #000000;
-	margin: 0px;
-} a {text-decoration:none;}
-		
-#dscr {
-	width:90%;
-	margin:auto;
-	margin-top:32px;
-	margin-bottom:4mm;
-	font-family:'JetBrains Mono';
-	text-align:center;
-	color:#000000;
-	font-size:3mm;
-}
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 #cntn {
-	padding-left:4mm;
-	padding-right:4mm;
-	margin-top: 32px;
-	margin-bottom: 32px;
-} #cntn * {font-family:'JetBrains Mono'; font-size:3mm;}
-	#cntn_sde1 {
-		
+	margin-bottom:4mm;
+	padding-top:20mm;} #cntn * {
+		font-family:'Open Sans'; font-size:3mm;}
+
+	#note {
+		width:95%;
+		margin:auto;
+		margin-top:2mm;
+		margin-bottom:4mm;
+		font-family:'Open Sans';
 		text-align:center;
-	}
-		#cntn_sde1_txt1 {
-			width:90%;
+		color:#404040;
+		font-size:3mm;}
+
+	#tool {}
+		#cntn_sde1 {
+			width:95%;
 			margin:auto;
-			margin-bottom:2mm;
-			height:20mm;
-		} textarea {background-color:#ffffff; color:#444444; padding:2mm; border-radius:1mm;
-			border:1px solid #000000;}
-		#cntn_sde1_txt2 {
-			width:90%;
-			margin:auto;
-			margin-bottom:2mm;
-			height:20mm;
-		}
-		#cntn_sde1_itm3 {
-			width:90%;
-			display:block;
-			text-align:center;
-			margin:auto;
-			margin-bottom:4mm;
-			color:#888888;
-			text-align:center;
-		}
-			#cntn_sde1_itm3 #tkn1 {
+			text-align:center;}
+			#cntn_sde1_txt1 {
+				width:97%;
+				margin:auto;
+				margin-bottom:2mm;
+				height:20mm;} textarea {
+					background-color:#ffffff; color:#404040; padding:1%; border-radius:1mm;
+					border:1px solid #404040;}
+			#cntn_sde1_txt2 {
+				width:97%;
+				margin:auto;
+				margin-bottom:2mm;
+				height:20mm;}
+			#cntn_sde1_itm3 {
+				width:97%;
 				display:block;
 				text-align:center;
-				margin-bottom:0px;
-				padding-bottom:0px;
-			}
-			#cntn_sde1_itm3 #tkn3 {
-				padding-left:2mm;
-				padding-right:2mm;
-			}
+				margin:auto;
+				margin-bottom:4mm;
+				color:#404040;
+				text-align:center;}
+				#cntn_sde1_itm3 #tkn1 {
+					display:block;
+					text-align:center;
+					margin-bottom:0px;
+					padding-bottom:0px;}
+				#cntn_sde1_itm3 #tkn3 {
+					padding-left:2mm;
+					padding-right:2mm;}
 			
-	#cntn_sde2 {
-		text-align:center;
-		display:flex;
-		flex-direction:column;
-		align-items:center;
-	}
-		#cntn_sde2_itm0 {
-			font-size:6mm;
-			font-weight:900;
-			margin:auto;
-			margin-bottom:4mm;
-			display:block;
-			order:2;
-			justify-content: space-around;
-		}
-		
-		#cntn_sde2_itm1 {
-			width:90%;
-			height:20mm;
-			margin:auto;
-			margin-bottom:8mm;
-			order:3;
-			border:1px solid #444444;
-		}
-		#cntn_sde2_itm2 {
-			display:block;
-			margin:auto;
-			width:95%;
+		#cntn_sde2 {
+			text-align:center;
 			display:flex;
-			justify-content: space-around;
-			order:1;
-			margin-bottom:16mm;
-		}
-			#btn1 {
-				width:47%;
-				height:12mm;
-			} button {border:0px solid #222222; background-color:#4a95bf; border-radius:1mm;
-				font-weight:900; font-size:4mm; color:#ffffff;
-				} button:active {background-color:#000000;}
-			#btn2 {
-				width:49%;
-				height:12mm;
-			}
-		#cntn_sde2_itm3 {
-			display:block;
-			order:4;
-		}
+			width:95%;
+			margin:auto;
+			flex-direction:column;
+			align-items:center;}
+			#cntn_sde2_itm0 {
+				font-size:6mm;
+				font-weight:900;
+				margin:auto;
+				margin-bottom:2mm;
+				display:block;
+				order:1;
+				color:#404040;
+				justify-content: space-around;}		
+			#cntn_sde2_itm1 {
+				width:97%;
+				padding:1%;
+				height:20mm;
+				margin:auto;
+				margin-bottom:8mm;
+				order:2;
+				border:1px solid #404040;}
+			#cntn_sde2_itm2 {
+				display:block;
+				margin:auto;
+				width:100%;
+				display:flex;
+				justify-content: space-between;
+				order:3;}
+				#btn1 {
+					width:49%;
+					padding-top:3mm;
+					padding-bottom:4mm;
+					order:2;
+				} button {border:0px solid #222222; background-color:#7470e6; border-radius:1mm;
+					font-weight:900; font-size:4mm; color:#ffffff;} button:active {
+						background-color:#352FDA;}
+				#btn2 {
+					width:49%;
+					order:1;
+					padding-top:3mm;
+					padding-bottom:4mm;}

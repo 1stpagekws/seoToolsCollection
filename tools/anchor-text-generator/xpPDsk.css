@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 #note {
 	max-width: 200mm;
 	width:98%;
 	margin:auto;
+	font-size:6mm;
 	margin-top: 64px;
-	font-family:'JetBrains Mono';
+	font-family:'Open Sans';
 	text-align:center;
 	color:#000000;
 }
@@ -14,7 +17,7 @@
 	margin-top: 64px;
 	justify-content: space-between;
 	margin-bottom: 64px;
-} #tool * {font-family:'JetBrains Mono';}
+} #tool * {font-family:'Open Sans';}
 	#cntn_sde1 {
 		width:50%;
 		text-align:center;
