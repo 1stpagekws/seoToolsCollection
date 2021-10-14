@@ -23,11 +23,11 @@ function determineDiplaySizeToUse () {
 
 	//|^^^^LEVEL 2^^^^|
 	if ($_GET    ["dsplaySize"] == "mobile") {
-		setcookie("dsplaySize",    "mobile", time () + (60 * 60 * 24 * 400));
+		setcookie("dsplaySize",    "mobile", time () + (60 * 60 * 24 * 400), "/");
 		$_COOKIE ["dsplaySize"]  = "mobile";
 
 	} else if ($_GET ["dsplaySize"] == "dsktop") {
-		setcookie("dsplaySize",    "dsktop", time () + (60 * 60 * 24 * 400));
+		setcookie("dsplaySize",    "dsktop", time () + (60 * 60 * 24 * 400), "/");
 		$_COOKIE ["dsplaySize"]  = "dsktop";
 	}
 	//|====LEVEL 2====|
@@ -42,10 +42,10 @@ function determineDiplaySizeToUse () {
 			$_SERVER ["HTTP_USER_AGENT"]);
 
 		if ($deviceType == true) {
-			setcookie ("dsplaySize",   "mobile", time () + (60 * 60 * 24 * 400));
+			setcookie ("dsplaySize",   "mobile", time () + (60 * 60 * 24 * 400), "/");
 			$_COOKIE  ["dsplaySize"] = "mobile";
 		} else {
-			setcookie ("dsplaySize",   "dsktop", time () + (60 * 60 * 24 * 400));
+			setcookie ("dsplaySize",   "dsktop", time () + (60 * 60 * 24 * 400), "/");
 			$_COOKIE  ["dsplaySize"] = "dsktop";
 		}
 	}
