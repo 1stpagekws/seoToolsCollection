@@ -6,64 +6,6 @@ body {
 	color: #000000;
 	margin: 0px;
 } a {text-decoration:none;}
-
-#menu {
-	background-color: #ffffff;
-	padding-top:1mm;
-	padding-bottom:1mm;
-	padding-left:4mm;
-	padding-right:4mm;
-	font-family:'Audiowide';
-	font-size:3mm;
-	color:#4a95bf;
-}
-	#menu_prt1 {
-		margin-bottom:4mm;
-	}
-		#menu_prt1 > a {
-			color:#4a95bf;
-		}
-	#menu_prt2 {
-		display:flex;
-		justify-content: space-between;
-		width:100%;
-		margin:auto;
-	}
-		#menu_prt2_itm1 {
-			flex-grow:1
-		}
-			#txt1 {
-				font-weight:900;
-				font-size:5mm;
-			}
-			#txt2 {
-				display:none;
-			}
-			#txt3 {
-				display:block;
-				color:#000000;
-			}
-		#menu_prt2_itm2 {
-		}
-			#dsplaySizeButton {
-				color:#ffffff;
-				background:#4a95bf;
-				padding:1mm;
-				padding-left:1mm;
-				padding-right:1mm;
-				border-radius:4px;
-			} #dsplaySizeButton:active {background:#000000;}
-
-hr {
-	margin-left:4mm;
-	margin-right:4mm;
-	height:1px;
-	border-radius:2mm;
-	color:#000000;
-	background-color:#000000;
-	border:0px solid #000000;
-}
-
 		
 #dscr {
 	width:90%;

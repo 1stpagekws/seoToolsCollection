@@ -77,6 +77,9 @@ function gnrateHeader ($prvsIntrfcId, $label) {
 	$prductName = fetchPrductName ();
 	$iconId = "";
 	$iconId = $prductId . "/tools/xtIcon.png";
+	if ($_COOKIE ["dsplaySize"] == "dsktop") {
+		$iconId = $prductId . "/tools/xtIcon.png";
+	}
 	$dsplaySizeChangeButton = "";
 	$dsplaySizeChangeButton = gnrateDsplaySizeChangeButton ();
 

@@ -1,31 +1,43 @@
-@import url('https://fonts.googleapis.com/css?family=Tourney&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Kelly+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe&display=swap');
 
-#cntn {}
+#cntn {
+	color:#404040;}
 	#note {
 		text-align:center;
 		max-width:200mm;
 		display:block;
 		margin:auto;
+		font-size:6mm;
+		font-family:'ZCOOL KuaiLe';
+		color:#404040;
 		margin-bottom:16mm;}
 
 	#tool {
 		display:flex;
 		justify-content:space-between;}
 		#sde1 {
+			font-family:'ZCOOL KuaiLe';
 			width:50%;
 			text-align:center;}
 			#inpt {
 				width:98%;
 				padding:1%;
+				font-family:'ZCOOL KuaiLe';
+				color:#404040;
 				height:96mm;
-				border:1px solid #909090;
-				border-radius:2mm;
-				margin-bottom:2mm;}
-			#kWrd {
-				width:50%;
-				padding:1%;
+				font-size:4mm;
 				border:1px solid #909090;
 				border-radius:1mm;
+				margin-bottom:2mm;}
+			#kWrd {
+				width:40%;
+				padding:1%;
+				font-size:4mm;
+				border:1px solid #909090;
+				font-family:'ZCOOL KuaiLe';
+				border-radius:1mm;
+				color:#404040;
 				height:8mm;
 				text-align:center;}
 		#sde2 {
@@ -38,14 +50,17 @@
 				padding:1%;
 				padding-left:0px;
 				padding-right:0px;
-				font-family:'Tourney';
+				font-family:'Kelly Slab';
 				margin-bottom:4mm;}
 				#whle {
 					padding:0px !important;
-					line-height:96mm;padding-left:0px;
-					letter-spacing:-16px;
+					line-height:96mm;
+					padding-left:0px;
+					letter-spacing:-8px;
 					font-size:64mm;}
 				#dcml {
+					line-height:64mm;
+					vertical-align:text-bottom;
 					font-size:16mm;}
 			#keys {
 				width:100%;
@@ -60,7 +75,7 @@
 					color:#ffffff;
 					font-weight:400;
 					border-radius:1mm;} #keys button:active {
-						background:#000000 !important; color:#7470e6;}
+						background:#352FDA !important; color:#ffffff;}
 				#gooo {
 					padding:1%;
 					width:50%;}

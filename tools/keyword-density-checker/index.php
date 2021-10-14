@@ -8,11 +8,13 @@ determineDiplaySizeToUse (); ?>
 <head>
 <title><?php echo fetchPrductName (); ?> || SEO Tools Collection || Keyword Density Checker
 	</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="<?php echo prvideIdOfTheApprprStylngCode (); ?>" />
+<link rel="stylesheet" href="<?php echo prvideIdOfTheApprprPrsnalStylngCode (); ?>" />
 <script type="text/javascript">
 	function prcess () {
-		document.getElementById ("inpt").style.border = "1mm solid #808080";
-		document.getElementById ("kWrd").style.border = "1mm solid #808080";
+		document.getElementById ("inpt").style.border = "1px solid #404040";
+		document.getElementById ("kWrd").style.border = "1px solid #404040";
 	
 		//|| CNTENT ||
 		var prcssdContent;
@@ -25,7 +27,7 @@ determineDiplaySizeToUse (); ?>
 			kyword = document.getElementById ("kWrd").value;
 			kyword = kyword.trim ();
 			if (kyword.length > 0) {
-				document.getElementById ("inpt").style.border = "2mm solid #ff0000";
+				document.getElementById ("inpt").style.border = "1px solid #F17300";
 				return;
 			}
 
@@ -44,7 +46,7 @@ determineDiplaySizeToUse (); ?>
 		prcssdKyword.trim ();
 
 		if (prcssdKyword.length == 0) {
-			document.getElementById ("kWrd").style.border = "2mm solid #ff0000";
+			document.getElementById ("kWrd").style.border = "1px solid #F17300";
 			return;
 		}
 
@@ -55,7 +57,7 @@ determineDiplaySizeToUse (); ?>
 
 		if (! /^[a-zA-Z0-9]+(\-[a-zA-Z0-9]+)* ([a-zA-Z0-9]+(\-[a-zA-Z0-9]+)* )*$/gm.test
 			(prcssdKyword)) {
-			document.getElementById ("kWrd").style.border = "2mm solid #ff0000";
+			document.getElementById ("kWrd").style.border = "1px solid #F17300";
 			return;
 		}
 
@@ -68,7 +70,7 @@ determineDiplaySizeToUse (); ?>
 		occrnc = 0;
 		var pttern;
 		var kywordPttern;
-		kywordPttern = prcssdKyword.replace (/\-/g, "\\-");
+		kywordPttern = prcssdKyword.replace (/\-/gi, "\\-");
 		pttern = new RegExp (kywordPttern, "g");
 		while (pttern.test (prcssdContent)) {
 			occrnc = occrnc + 1;
@@ -94,20 +96,16 @@ determineDiplaySizeToUse (); ?>
 	}
 
 	function clearX () {
-		document.getElementById ("inpt").style.border = "1mm solid #808080";
-		document.getElementById ("kWrd").style.border = "1mm solid #808080";
+		document.getElementById ("inpt").style.border = "1px solid #404040";
+		document.getElementById ("kWrd").style.border = "1px solid #404040";
 
 		document.getElementById ("inpt").value = "";
 		document.getElementById ("kWrd").value = "";
 		
-		document.getElementById ("whle").innerHTML =  "00";
-		document.getElementById ("dcml").innerHTML = ".00"; }
+		document.getElementById ("whle").innerHTML =  "--";
+		document.getElementById ("dcml").innerHTML = ".--"; }
 		
-	</script>
-		
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="<?php echo prvideIdOfTheApprprStylngCode (); ?>" />
-<link rel="stylesheet" href="<?php echo prvideIdOfTheApprprPrsnalStylngCode (); ?>" /> </head>
+	</script> </head>
 
 <body><div id="body">
 	<?php echo gnrateHeader (fetchPrductId () . "/tools", "Keyword Density Checker"); ?>
@@ -124,7 +122,7 @@ determineDiplaySizeToUse (); ?>
 					</span>
 
 			<span id="sde2">
-				<span id="dnst"><span id="whle">00</span><span id="dcml">.00</span></span>
+				<span id="dnst"><span id="whle">--</span><span id="dcml">.--</span></span>
 				<span id="keys">
 					<button id="gooo" name="gooo" onclick="prcess ();">GO!  </button>
 					<button id="clar" name="clar" onclick="clearX ();">CLEAR</button> </span>

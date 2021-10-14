@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=JetBrains+Mono&display=swap');
 
 body {
-	margin:0px; } #body {
+	margin:0px;} #body {
 	margin:0px;
 	padding:0px;
 	width:98%;
@@ -27,7 +27,7 @@ body {
 					height:12mm;}
 			#text {
 				display:block;
-				color:#808080;
+				color:#8786EA;
 				font-size:10mm;
 				font-weight:800;
 				text-decoration:none;
@@ -40,7 +40,7 @@ body {
 				font-weight:800;
 				text-transform:uppercase;
 				font-family:'Righteous';
-				color:#888888;}
+				color:#8786EA;}
 
 		#bttn {}
 			#prvs {
@@ -52,7 +52,7 @@ body {
 				padding-right:7mm;
 				text-decoration:none;
 				text-align:center;} #prvs:active {
-					background:#808080 !important;}
+					background:#352FDA !important;}
 
 			#dSCB {
 				text-align:center;
@@ -63,18 +63,19 @@ body {
 				padding-right:6mm;
 				border-radius:2mm;
 				text-decoration:none;} #dSCB:active {
-					background:#808080 !important;}
+					background:#352FDA !important;}
 
 	#line {
 		height:2px;
-		background-color:#808080;
-		margin-bottom:1mm;
+		background-color:#7470e6;
+		margin-bottom:2px;
 		border-radius:2mm;
 		border:0px solid #000000;}
 
 	#lne2 {
 		height:2px;
-		background-color:#808080;
-		margin-bottom:16mm;
+		background-color:#F17300;
+		margin-top:0px;
+		margin-bottom:8mm;
 		border-radius:2mm;
 		border:0px solid #000000;}
