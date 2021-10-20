@@ -14,7 +14,7 @@
 		margin:auto;
 		margin-top:2mm;
 		margin-bottom:2mm;
-		border-bottom:4px solid #7470e6;
+		border-bottom:4px solid #4a95bf;
 		display:block;
 		font-family:'Open Sans';
 		text-align:justify;
@@ -38,7 +38,7 @@
 					padding:1%;
 					font-size:3mm;
 					border-radius:3px;
-					border:2px solid #7470e6;}
+					border:2px solid #4a95bf;}
 			#cntn_sde1_txt2 {
 				width:97%;
 				margin:auto;
@@ -84,7 +84,7 @@
 				margin:auto;
 				margin-bottom:8mm;
 				order:2;
-				border:2px solid #7470e6;}
+				border:2px solid #4a95bf;}
 			#cntn_sde2_itm2 {
 				display:block;
 				margin:auto;
@@ -97,9 +97,14 @@
 					padding-top:3mm;
 					padding-bottom:4mm;
 					order:2;
-				} button {border:0px solid #222222; background-color:#7470e6; border-radius:1mm;
-					font-weight:900; font-size:3mm; color:#ffffff;} button:active {
-						background-color:#352FDA;}
+				} button {
+					border:0px solid #222222;
+					background-color:#4a95bf;
+					border-radius:1mm;
+					font-weight:900;
+					font-size:3mm;
+					color:#ffffff;} button:active {
+						background-color:#306888;}
 				#btn2 {
 					width:49%;
 					order:1;

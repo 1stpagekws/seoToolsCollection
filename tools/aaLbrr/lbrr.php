@@ -7,7 +7,7 @@ function fetchPrductId () {
 }
 
 function fetchPrductName () {
-	return "1stPage KWs";
+	return "RealEstatEko";
 }
 
 function determineDiplaySizeToUse () {

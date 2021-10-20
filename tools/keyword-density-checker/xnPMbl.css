@@ -16,7 +16,7 @@
 		display:block;
 		display:block;
 		color:#404040;
-		border-bottom:4px solid #7470e6;
+		border-bottom:4px solid #4a95bf;
 		margin:auto;
 		width:95%;
 		padding-bottom:1mm;
@@ -38,7 +38,7 @@
 				height:40mm;
 				font-size:3mm;
 				color:#808080;
-				border:2px solid #7470e6;
+				border:2px solid #4a95bf;
 				border-radius:1mm;
 				margin-bottom:2mm;}
 
@@ -47,7 +47,7 @@
 				padding:1%;
 				color:#808080;
 				font-size:3mm;
-				border:2px solid #7470e6;
+				border:2px solid #4a95bf;
 				border-radius:1mm;
 				height:8mm;
 				text-align:center;}
@@ -88,13 +88,13 @@
 					padding-top:3mm;
 					padding-bottom:4mm;
 					border:0px solid #c0c0c0;
-					background-color:#7470e6;
+					background-color:#4a95bf;
 					font-size:4mm;
 					font-family:'JetBrains Mono';
 					color:#ffffff;
 					font-weight:400;
 					border-radius:1mm;} #keys button:active {
-						background:#352FDA !important; color:#ffffff;}
+						background:#306888 !important; color:#ffffff;}
 				#gooo {
 					width:50%;}
 				#clar {

@@ -30,7 +30,10 @@
 			padding-bottom:2mm;
 			margin-bottom:1mm;
 			height:40mm;
-		} textarea {background-color:#ffffff; color:#444444; border-radius:1mm;
+		} textarea {
+			background-color:#ffffff;
+			color:#444444;
+			border-radius:1mm;
 			border:1px solid #000000;}
 		#cntn_sde1_txt2 {
 			width:96%;
@@ -84,13 +87,13 @@
 				order:2;
 			} #cntn_sde2_itm2 button {
 				border:0mm solid #222222;
-				background-color:#7470e6;
+				background-color:#4a95bf;
 				border-radius:1mm;
 				font-family:'JetBrains Mono' !important;
 				font-size:4mm;
 				color:#ffffff;}
 				#cntn_sde2_itm2 button:active {
-				background-color:#352FDA;}
+				background-color:#306888;}
 			#btn2 {
 				width:50%;
 				order:1;

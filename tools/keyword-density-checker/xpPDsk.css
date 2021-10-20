@@ -69,13 +69,13 @@
 				#keys button {
 					height:12mm;
 					border:0px solid #909090;
-					background-color:#7470e6;
+					background-color:#4a95bf;
 					font-size:4mm;
 					font-family:'JetBrains Mono';
 					color:#ffffff;
 					font-weight:400;
 					border-radius:1mm;} #keys button:active {
-						background:#352FDA !important; color:#ffffff;}
+						background:#306888 !important; color:#ffffff;}
 				#gooo {
 					padding:1%;
 					width:50%;}

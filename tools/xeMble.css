@@ -20,7 +20,7 @@ body {
 		padding-top:2mm;
 		padding-bottom:3mm;
 		justify-content:space-between;
-		border-bottom:1mm dashed #7470e6;
+		border-bottom:1mm dashed #4a95bf;
 		}
 		#ttle {
 			width:75%;
@@ -34,7 +34,7 @@ body {
 					height:6mm;}
 			#text {
 				display:block;
-				color:#7470e6;
+				color:#4a95bf;
 				font-size:6mm;
 				font-weight:800;
 				text-align:center;
@@ -71,7 +71,7 @@ body {
 				text-align:center;
 				color:#ffffff;
 				margin-right:1mm;
-				background-color:#7470e6;
+				background-color:#4a95bf;
 				padding:2mm;
 				font-size:3mm;
 				padding-left:6mm;
@@ -80,7 +80,7 @@ body {
 				order:1;
 				font-weight:600;
 				text-decoration:none;} #dSCB:active {
-					background:#352FDA !important; color:#ffffff;}
+					background:#306888 !important; color:#ffffff;}
 
 	#line {
 		display:none;}
