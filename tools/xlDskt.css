@@ -48,8 +48,8 @@ body {
 				background-color:#4a95bf;
 				border-radius:2mm;
 				padding:3mm;
-				padding-left:6mm;
-				padding-right:7mm;
+				padding-left:8mm;
+				padding-right:8mm;
 				text-decoration:none;
 				text-align:center;} #prvs:active {
 					background:#306888 !important;}
@@ -60,7 +60,7 @@ body {
 				background-color:#4a95bf;
 				padding:3mm;
 				padding-left:6mm;
-				padding-right:6mm;
+				padding-right:5mm;
 				border-radius:2mm;
 				text-decoration:none;} #dSCB:active {
 					background:#306888 !important;}

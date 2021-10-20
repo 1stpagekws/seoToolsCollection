@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Kelly+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+#cntn {
+	color:#404040;}
+	#note {
+		text-align:center;
+		max-width:200mm;
+		display:block;
+		margin:auto;
+		font-size:4mm;
+		font-family:'Open Sans';
+		color:#404040;
+		margin-bottom:16mm;}
+
+	#mble {display:none;}
+
+	#dskt {
+		display:flex;
+		justify-content:space-between;} #dskt input, #dskt textarea {
+			border-radius:1mm;
+			font-size:4mm;}
+		#sde1 {
+			width:48%;}
+			#inpt {
+				display:flex;
+				justify-content:space-between;
+				margin-bottom:2mm;}
+				#kywr {
+					border:1px solid #4a95bf;
+					padding:1%;
+					text-align:center;
+					width:80%;}
+				#qntt {
+					border:1px solid #4a95bf;
+					text-align:center;
+					padding:1%;
+					width:13%;} #inpt input {
+						padding-top:4mm;
+						padding-bottom:4mm;}
+			#gooo {
+				display:block;
+				width:100%;
+				padding-top:4mm;
+				border-radius:1mm;
+				padding-bottom:4mm;
+				background-color:#4a95bf;
+				color:#ffffff;
+				border:0px solid #000000;
+				margin-bottom:8mm;}
+			#fltr {
+				display:block;
+				background-color:#e0e0e0;
+				padding:1%;
+				border-radius:2mm;}
+				#fltr #ttle {
+					display:block;
+					border-radius:1mm;
+					margin-bottom:16mm;
+					padding:1%;
+					padding-top:4mm;
+					padding-bottom:4mm;
+					background-color:#f0f0f0;
+					width:98%;
+					text-align:center;}
+				#fltr #fInp {
+					display:flex;
+					margin-bottom:2mm;
+					justify-content:space-between;} #fltr #fInp input {
+						padding:1%;
+						padding-top:4mm;
+						text-align:center;
+						padding-bottom:4mm;}
+					#pstv {
+						width:46.5%;}
+					#ngtv {
+						width:46.5%;}
+				#fltr #fBtt {
+					display:block;
+					width:100%;
+					padding-top:4mm;
+					padding-bottom:4mm;
+					margin-bottom:15mm;}
+		#sde2 {
+			width:48%;}
+			#prgr {
+				display:block;
+				-webkit-appearance: none;
+				width:100%;
+				height:8mm;} progress::-webkit-progress-bar {
+					border-radius:1mm;
+					border:1mm solid #888888;
+					background-color:#ffffff;
+					padding:0px;
+					} progress::-webkit-progress-value {
+					border-radius:1mm;
+					background-image:-webkit-linear-gradient(0deg, transparent 33%,
+						rgba(0, 0, 0, .1) 33%, rgba(0,0, 0, .1) 66%, transparent 66%),
+					-webkit-linear-gradient(top, rgba(255, 255, 255, .25), rgba(0, 0, 0, .25)),
+					-webkit-linear-gradient(left, #09c, #00ff00);}
+			#pStt {
+				display:block;
+				text-align:center;
+				margin-top:1mm;
+				margin-bottom:13mm;}
+			#rslt {
+				display:block;
+				width:97%;
+				text-align:center;
+				margin:auto;
+				padding:1%;
+				height:64mm;
+				margin-bottom:2mm;}
+			#copy {
+				display:block;
+				margin:auto;
+				text-align:center;
+				padding-top:4mm;
+				border:0px solid #000000;
+				border-radius:1mm;
+				background-color:#aaaaaa;
+				width:100%;
+				padding-bottom:4mm;
+				margin-bottom:8mm;}

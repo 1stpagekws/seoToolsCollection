@@ -28,7 +28,7 @@ determineDiplaySizeToUse (); ?>
 		<!--C-->
 			<span
 			   id="pck1">
-			<a id="itm3" class="grp2" href="">Keyword Research</a>
+			<a id="itm3" class="grp2" href="keyword-research">Keyword Research</a>
 			<a id="itm4" class="grp1" href="">
 				<img src="xwBck2.png" />
 				<span>Penalty Check</span> </a> </span> </span>

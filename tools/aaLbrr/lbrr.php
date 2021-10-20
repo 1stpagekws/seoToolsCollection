@@ -100,7 +100,7 @@ function gnrateHeader ($prvsIntrfcId, $label) {
 			<span id="ttle">
 				<a    id="icon" href="{$prductId}"><img src="{$iconId}" /></a>
 				<a    id="text" href="{$prductId}">{$prductName}</a>
-				<span id="aInt">>> {$label}</span> </span>
+				<span id="aInt">{$label}</span> </span>
 			<span id="bttn">
 				<a id="prvs" href="{$prvsIntrfcId}">BACK</a>
 				{$dsplaySizeChangeButton} </span> </div>
