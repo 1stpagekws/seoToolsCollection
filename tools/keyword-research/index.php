@@ -10,7 +10,56 @@ determineDiplaySizeToUse (); ?>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="<?php echo prvideIdOfTheApprprStylngCode (); ?>" />
 <link rel="stylesheet" href="<?php echo prvideIdOfTheApprprPrsnalStylngCode (); ?>" />
-<script type="text/javascript"></script> </head>
+<script type="text/javascript">
+	function prcess () {
+		/*STEP 0:*/
+		// change border colour
+	
+		/*STEP 1: disable button*/
+		document.getElementById ("m_go").disabled = false;
+		document.getElementById ("gooo").disabled = false;
+
+		/*STEP 2: check if activity should really run */
+		var kyword;
+		var source;
+		if (document.getElementById ("m_ky").value != "") {
+			kyword = document.getElementById ("m_ky").value;
+			kyword = kyword.trim ();
+			if (keyword == "") {
+				return;
+			}
+			source = "mobile";
+		} else {
+			kyword = document.getElementById ("kywr").value;
+			kyword = kyword.trim ();
+			if (keyword == "") {
+				return;
+			}
+			source = "dsktop";
+		}
+
+		/*STEP 3: validate quantity */
+		var qntity;
+		if (source == "mobile") {
+			qntity = document.getElementId ("m_qn").value;
+		} else {
+			qntity = document.getElementId ("qntt").value;
+		}
+		qntity = qntity.trim ();
+		if (! /^[1-9]\d*$/.test (qntity)) {
+			//change border colour
+			return;
+		}
+
+		/*STEP 4: clear output */
+		document.getElementId ("m_rs").value = "";
+		document.getElementId ("rslt").value = "";
+
+		/*STEP 5: process */
+		
+
+
+</script> </head>
 
 <body><div id="body">
 	<?php echo gnrateHeader (fetchPrductId () . "/tools", "Keyword Research"); ?>
@@ -34,7 +83,8 @@ calculate keyword densities, thereby helping to improve SEO rankings on SERP.</d
 			<div id="sde2">
 				<progress id="prgr" max="100" value="100"> </progress>
 				<p        id="pStt">Connecting to the internet...</p>
-				<textarea id="rslt" placeholder="RESULT WILL BE DISPLAYED HERE"></textarea>
+				<textarea id="rslt" placeholder="RESULT WILL BE DISPLAYED HERE" disabled>
+					</textarea>
 				<button   id="copy" type="submit">COPY</button></div>
 
 			</div>
@@ -47,7 +97,8 @@ calculate keyword densities, thereby helping to improve SEO rankings on SERP.</d
 			<div id="int2">
 				<progress id="m_pr" max="100" value="100"> </progress>
 				<p        id="m_pS">Connecting to the internet...</p>
-				<textarea id="m_rs" placeholder="RESULT WILL BE DISPLAYED HERE"></textarea>
+				<textarea id="m_rs" placeholder="RESULT WILL BE DISPLAYED HERE" disabled>
+					</textarea>
 				<span     id="m_bt"><button id="m_bc" type="submit">BACK</button>
 				<!--C--><button id="m_cp" type="submit">COPY</button></span>
 				
