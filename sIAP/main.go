@@ -4,10 +4,14 @@ import (
 	"bufio"
 	"path/filepath"
 	"fmt"
+	"io"
+	"net/http"
 	"os"
 	"regexp"
+	"runtime"
 	"strconv"
 	"strings"
+	"time"
 )
 
 func main () {
@@ -181,14 +185,102 @@ func main () {
 		prsentDayCount)), 0666)
 
 	// STEP 5: startup the matt dimens
-	fmt.Println (googleAPI)
-	fmt.Println (searchEngineId)
-	fmt.Println (dailyLimit)
-	fmt.Println (prsentDay)
-	fmt.Println (prsentDayCount)
+	// STEP 5.1 Dimen 1
+	var dimenS1Clap chan []string
+	dimenS1Clap = make (chan []string)
+	var dimenS1Flap chan []string
+	dimenS1Flap = make (chan []string)
+	go srvc_krsr (dimenS1Clap, dimenS1Flap)
+
+	dimenS1Clap <- []string {googleAPI, searchEngineId, strconv.Itoa (dailyLimit), prsentDay,
+		strconv.Itoa (prsentDayCount)}
+
+	_x2 := strings.Replace (time.Now ().Format ("2006-01-02"), "-", "", -1)
+	prsentDay = _x2
+	prsentDayCount = prsentDayCount + 1
+	os.WriteFile (_y1, []byte (fmt.Sprintf ("%s %s %d %s-%d",
+		googleAPI,
+		searchEngineId,
+		dailyLimit,
+		prsentDay,
+		prsentDayCount)), 0666)
+		
+	_x1 := <- dimenS1Flap
+	if _x1 [0] == "fled" {
+		fmt.Println ("STTS:")
+		fmt.Println (fmt.Sprintf ("------ERROR: Could not start up dimen s1: 'srvc_krsr' [%s]",
+			_x1 [1]))
+		fmt.Println ("")
+		return
+	}
+
+	// STEP 5.2: Dimen 2
+	var dimenS2Clap chan []string
+	dimenS2Clap = make (chan []string)
+	var dimenS2Flap chan []string
+	dimenS2Flap = make (chan []string)
+	go intr_krsrHTTP (dimenS2Clap, dimenS2Flap)
+
+	dimenS2Clap <- []string {"8001"}
+
+	fmt.Println ("Good so far!")
+	for {
+		runtime.Gosched ()
+	}
 }
 
-func srvc_krsr (clap chan<- []string, flap chan<- []string) {}
+func srvc_krsr (clap <-chan []string, flap chan<- []string) {
+	_x1 := <- clap
+
+	_x2, _x3 := http.Get (fmt.Sprintf ("https://www.googleapis.com/customsearch/v1?key=%s" +
+		"&cx=%s&q=hello&start=0", _x1 [0], _x1 [1]))
+	if _x3 != nil {
+		flap <- []string {"fled", _x3.Error ()}
+		return
+	}
+	if _x2.StatusCode != 200 {
+		flap <- []string {"fled", "Status code is: " + strconv.Itoa (_x2.StatusCode)}
+		return
+	}
+	_, _x4 := io.ReadAll (_x2.Body)
+	_x2.Body.Close ()
+	if _x4 != nil {
+		flap <- []string {"fled", _x4.Error ()}
+		return
+	}
+
+	flap <- []string {"sccs"}
+}
 
 //|| intr:kRsrHTTP
-func intr_krsrHTTP (clap chan<- []string, flap chan<- []string) {}
+func intr_krsrHTTP (clap <-chan []string, flap chan<- []string) {
+	_x1 := <- clap
+	
+	http.HandleFunc ("/", func (w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf (w, "Hello world!")
+	})
+
+	http.ListenAndServe (":" + _x1 [0], nil)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
