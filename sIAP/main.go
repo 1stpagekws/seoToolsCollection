@@ -4,13 +4,15 @@ import (
 	"bufio"
 	"path/filepath"
 	"fmt"
+	"github.com/tidwall/gjson"
 	"io"
 	"net/http"
+	"net/url"
 	"os"
 	"regexp"
-	"runtime"
 	"strconv"
 	"strings"
+	"sync"
 	"time"
 )
 
@@ -223,10 +225,29 @@ func main () {
 
 	dimenS2Clap <- []string {"8001"}
 
-	fmt.Println ("Good so far!")
+	// STEP 6:
 	for {
-		runtime.Gosched ()
-	}
+		select {
+			case msg1 := <- dimenS1Flap: {
+				if msg1 [0] == "e" {
+					fmt.Println ("------ERROR (srvc_krsr):" + msg1 [1])
+				} else if msg1 [0] == "0" {
+					os.WriteFile (_y1, []byte (fmt.Sprintf ("%s %s %d %s-%d",
+					googleAPI,
+					searchEngineId,
+					dailyLimit,
+					msg1 [1],
+					msg1 [2])), 0666)
+				} else if msg1 [0] == "2" {
+					dimenS2Clap <- msg1
+				}
+			}
+			case msg2 := <- dimenS2Flap: {
+				dimenS1Clap <- msg2
+			}
+
+		}
+	}		
 }
 
 func srvc_krsr (clap <-chan []string, flap chan<- []string) {
@@ -250,19 +271,181 @@ func srvc_krsr (clap <-chan []string, flap chan<- []string) {
 	}
 
 	flap <- []string {"sccs"}
+	_xK, _ := strconv.Atoi (_x1 [4])
+	_xK = _xK + 1
+	_x1 [4] = strconv.Itoa (_xK)
+
+	for {
+		_x5 := <- clap
+
+		_xB, _ := strconv.Atoi (_x5 [2])
+		var result []string
+		result = []string {"2", "sccs"}
+		for r := 1; r <= 1; r ++ {
+			_x6 := strings.Replace (time.Now ().Format ("2006-01-02"), "-", "", -1)
+			if _x1 [3] != _x6 {
+				_x1 [3] = _x6
+				_x1 [4] = "0"
+				flap <- []string {"0", _x1 [3], _x1 [4]}
+			}
+
+			if _x1 [4] >= _x1 [2] {
+				flap <- []string {"2", "dcln"}
+				break
+			}
+	
+			var start string
+			start = fmt.Sprintf ("%d", (r - 1) * 10)
+			_x7, _x8 := http.Get (fmt.Sprintf ("https://www.googleapis.com/customsearch/v1?" +
+				"key=%s&cx=%s&q=%s&start=%s", _x1 [0], _x1 [1], url.QueryEscape (_x5 [1]),
+				start))
+			_xJ, _ := strconv.Atoi (_x1 [4])
+			_xJ = _xJ + 1
+			_x1 [4] = strconv.Itoa (_xJ)
+			flap <- []string {"0", _x1 [3], _x1 [4]}
+			if _x8 != nil {
+				flap <- []string {"2", "fled"}
+				flap <- []string {"e", _x8.Error ()}
+				break
+			}
+			if _x7.StatusCode != 200 {
+				flap <- []string {"2", "fled"}
+				flap <- []string {"e", "Status code is: " + strconv.Itoa (_x7.StatusCode)}
+				break
+			}
+			_x9, _xA := io.ReadAll (_x7.Body)
+			_x7.Body.Close ()
+			if _xA != nil {
+				flap <- []string {"2", "fled"}
+				flap <- []string {"e", _xA.Error ()}
+				break
+			}
+
+			var nextItrt bool
+			nextItrt = true
+			for i := 1; i <= int (gjson.Get (string (_x9), "items.#").Uint ()); i ++ {
+				_xD := fmt.Sprintf ("items.%d.title", i - 1)
+				_xC := gjson.Get (string (_x9), _xD).String ()
+
+				_xC = strings.Trim (_xC, " ")
+				var multipleSpacePattern *regexp.Regexp
+				multipleSpacePattern = regexp.MustCompile (" {2,}")
+				_xC = multipleSpacePattern.ReplaceAllString (_xC, " ")
+				_xF := strings.Split (_x5 [1], " ")
+				_xG := regexp.QuoteMeta (_xF [0]) + "[a-z]*"
+				for i, word := range _xF {
+					if i == 0 {
+						continue
+					}
+					_xG = _xG + "|" + regexp.QuoteMeta (word) + "[a-z]*"
+				}
+				var keywordPattern string
+				keywordPattern = fmt.Sprintf (`(?i)([a-zA-Z0-9']+(\-[a-zA-Z0-9'])* +)*(%s)` +
+					`( +[a-zA-Z0-9']+(\-[a-zA-Z0-9'])*)*( \.\.\.)*`, _xG)
+				_xH := regexp.MustCompile (keywordPattern)
+				_xI := _xH.FindString (_xC)
+
+				if _xI == "" {
+					continue
+				}
+
+				var abbreviatedPattern *regexp.Regexp
+				abbreviatedPattern = regexp.MustCompile (`\.\.\.$`)
+				if abbreviatedPattern.Match ([]byte (_xI)) == true {
+					continue
+				}
+
+				_xI = strings.ToLower (_xI)
+				var found bool
+				found = false
+				for i, word := range result {
+					if i <= 1 {
+						continue
+					}
+
+					if word == _xI {
+						found = true
+						break
+					}
+				}
+				if found == true {
+					continue
+				}
+
+				if _xI == strings.ToLower (_x5 [1]) {
+					continue
+				}
+
+				result = append (result, _xI)
+
+				if _xB == (len (result) - 2) {
+					nextItrt = false
+					break
+				}
+			}
+
+			if nextItrt == false {
+				break
+			}
+		}
+		
+		if len (result) == 2 {
+			continue
+		}
+
+		flap <- result
+	}
 }
 
 //|| intr:kRsrHTTP
 func intr_krsrHTTP (clap <-chan []string, flap chan<- []string) {
 	_x1 := <- clap
+
+	intr_krsrHTTP_clap = clap
+	intr_krsrHTTP_flap = flap
 	
 	http.HandleFunc ("/", func (w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf (w, "Hello world!")
+		_x2, _x3 := r.URL.Query ()["kyword"]
+		if _x3 == false || len (_x2) < 1 {
+			fmt.Fprintf (w, "cErr/No keyword was provided")
+			return
+		}
+
+		_x4, _x5 := r.URL.Query ()["qntity"]
+		if _x5 == false || len (_x4) < 1 {
+			fmt.Fprintf (w, "cErr/No quantity was provided")
+			return
+		}
+	
+		intr_krsrHTTP_lock.Lock ()
+		intr_krsrHTTP_flap <- []string {"1", _x2 [0], _x4 [0]}
+		_x6 := <- intr_krsrHTTP_clap
+		fmt.Println (_x6)
+		var output string
+		if _x6 [1] == "dcln" {
+			output = "dcln"
+		} else if _x6 [1] == "fled" {
+			output = "serr"
+		} else {
+			output = "sccs"
+			for k, result := range _x6 {
+				if k <= 1 {
+					continue
+				}
+				output = "/" + result
+			}	
+		}
+		intr_krsrHTTP_lock.Unlock ()
+
+		fmt.Fprintf (w, output)	
 	})
 
 	http.ListenAndServe (":" + _x1 [0], nil)
 }
-
+var (
+	intr_krsrHTTP_clap <-chan []string
+	intr_krsrHTTP_flap chan<- []string
+	intr_krsrHTTP_lock *sync.Mutex = &sync.Mutex {} )
 
 
 
