@@ -210,7 +210,7 @@ func main () {
 	_x1 := <- dimenS1Flap
 	if _x1 [0] == "fled" {
 		fmt.Println ("STTS:")
-		fmt.Println (fmt.Sprintf ("------ERROR: Could not start up dimen s1: 'srvc_krsr' [%s]",
+		fmt.Println (fmt.Sprintf ("------ERRR: Could not start up dimen s1: 'srvc_krsr' [%s]",
 			_x1 [1]))
 		fmt.Println ("")
 		return
@@ -226,13 +226,15 @@ func main () {
 	dimenS2Clap <- []string {"8001"}
 
 	// STEP 6:
+	fmt.Println ("STTE:")
+	fmt.Println ("------Program has fully launched")
 	for {
 		select {
 			case msg1 := <- dimenS1Flap: {
 				if msg1 [0] == "e" {
-					fmt.Println ("------ERROR (srvc_krsr):" + msg1 [1])
+					fmt.Println ("------ERRR (srvc_krsr):" + msg1 [1])
 				} else if msg1 [0] == "0" {
-					os.WriteFile (_y1, []byte (fmt.Sprintf ("%s %s %d %s-%d",
+					os.WriteFile (_y1, []byte (fmt.Sprintf ("%s %s %d %s-%s",
 					googleAPI,
 					searchEngineId,
 					dailyLimit,
@@ -420,7 +422,6 @@ func intr_krsrHTTP (clap <-chan []string, flap chan<- []string) {
 		intr_krsrHTTP_lock.Lock ()
 		intr_krsrHTTP_flap <- []string {"1", _x2 [0], _x4 [0]}
 		_x6 := <- intr_krsrHTTP_clap
-		fmt.Println (_x6)
 		var output string
 		if _x6 [1] == "dcln" {
 			output = "dcln"
@@ -432,7 +433,7 @@ func intr_krsrHTTP (clap <-chan []string, flap chan<- []string) {
 				if k <= 1 {
 					continue
 				}
-				output = "/" + result
+				output = output + "/" + result
 			}	
 		}
 		intr_krsrHTTP_lock.Unlock ()
