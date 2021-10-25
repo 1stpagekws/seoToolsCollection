@@ -291,7 +291,9 @@ func srvc_krsr (clap <-chan []string, flap chan<- []string) {
 				flap <- []string {"0", _x1 [3], _x1 [4]}
 			}
 
-			if _x1 [4] >= _x1 [2] {
+			_xR, _ := strconv.Atoi (_x1 [4])
+			_xS, _ := strconv.Atoi (_x1 [2])
+			if _xR >= _xS {
 				flap <- []string {"2", "dcln"}
 				break
 			}
@@ -426,7 +428,7 @@ func intr_krsrHTTP (clap <-chan []string, flap chan<- []string) {
 		if _x6 [1] == "dcln" {
 			output = "dcln"
 		} else if _x6 [1] == "fled" {
-			output = "serr"
+			output = "sErr"
 		} else {
 			output = "sccs"
 			for k, result := range _x6 {

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Kelly+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
 #cntn {
 	color:#404040;}
@@ -19,7 +20,8 @@
 		display:flex;
 		justify-content:space-between;} #dskt input, #dskt textarea {
 			border-radius:1mm;
-			font-size:4mm;}
+			font-size:4mm;
+			font-family:'Roboto Mono';}
 		#sde1 {
 			width:48%;}
 			#inpt {
@@ -47,9 +49,10 @@
 				background-color:#4a95bf;
 				color:#ffffff;
 				border:0px solid #000000;
-				margin-bottom:8mm;}
+				margin-bottom:8mm;} #gooo:active {background-color:#306888;}
 			#fltr {
 				display:block;
+				margin-top:22mm;
 				background-color:#e0e0e0;
 				padding:1%;
 				border-radius:2mm;}
@@ -60,6 +63,7 @@
 					padding:1%;
 					padding-top:4mm;
 					padding-bottom:4mm;
+					font-weight:900;
 					background-color:#f0f0f0;
 					width:98%;
 					text-align:center;}
@@ -68,6 +72,7 @@
 					margin-bottom:2mm;
 					justify-content:space-between;} #fltr #fInp input {
 						padding:1%;
+						border:1px solid #888888;
 						padding-top:4mm;
 						text-align:center;
 						padding-bottom:4mm;}
@@ -79,8 +84,11 @@
 					display:block;
 					width:100%;
 					padding-top:4mm;
+					background-color:#95C0DA;
+					color:#000000;
+					border:0px solid #000000;
 					padding-bottom:4mm;
-					margin-bottom:15mm;}
+					margin-bottom:0mm;} #fBtt:active {background-color:#306888 !important;}
 		#sde2 {
 			width:48%;}
 			#prgr {
@@ -89,7 +97,7 @@
 				width:100%;
 				height:8mm;} progress::-webkit-progress-bar {
 					border-radius:1mm;
-					border:1mm solid #888888;
+					border:2px solid #888888;
 					background-color:#ffffff;
 					padding:0px;
 					} progress::-webkit-progress-value {
@@ -106,6 +114,7 @@
 			#rslt {
 				display:block;
 				width:97%;
+				font-size:1mm !important;
 				text-align:center;
 				margin:auto;
 				padding:1%;
@@ -116,9 +125,9 @@
 				margin:auto;
 				text-align:center;
 				padding-top:4mm;
-				border:0px solid #000000;
+				border:0px solid #ffffff;
 				border-radius:1mm;
-				background-color:#aaaaaa;
+				background-color:#95C0DA;
 				width:100%;
 				padding-bottom:4mm;
-				margin-bottom:8mm;}
+				margin-bottom:8mm;} #copy:active {background-color:#306888;}
