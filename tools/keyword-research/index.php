@@ -148,6 +148,9 @@ document.getElementById ("rslt").value = document.getElementById("rslt").value +
 					}
 					return;
 				} else {
+					document.getElementById ("m_pr").value = 2;
+					document.getElementById ("prgr").value = 2;
+
 					document.getElementById ("m_pS").innerHTML = "Fatal error encountered. " +
 						"Try again";
 					document.getElementById ("pStt").innerHTML = "Fatal error encountered. " +
@@ -296,9 +299,9 @@ document.getElementById ("rslt").value = document.getElementById("rslt").value +
 	<?php echo gnrateHeader (fetchPrductId () . "/tools", "Keyword Research"); ?>
 
 	<div id="cntn">
-		<div id="note">Google and other top search engines recommend having keyword densities
-between 1 - 8 percent. Anything outside the range may result in a poor SEO rank. I help to
-calculate keyword densities, thereby helping to improve SEO rankings on SERP.</div>
+		<div id="note">When you have a topic keyword, knowing what similar keywords rank high,
+helps to create better SEO contents. Tell me your topic keyword and how many similar top
+keywords you want. I will fetch them for you.</div>
 
 		<div id="dskt">
 			<div id="sde1">
