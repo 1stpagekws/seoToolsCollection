@@ -2,13 +2,12 @@ package main
 
 import (
 	"bufio"
+	"bytes"
 	"path/filepath"
 	"fmt"
-	"github.com/tidwall/gjson"
-	"io"
 	"net/http"
-	"net/url"
 	"os"
+	"os/exec"
 	"regexp"
 	"strconv"
 	"strings"
@@ -21,10 +20,8 @@ func main () {
 	fmt.Println ()
 
 	// STEP 1: create info required by matt dimens
-	var googleAPI string
-	googleAPI = "id1"
-	var searchEngineId string
-	searchEngineId = "id2"
+	var username string
+	username = "root"
 	var dailyLimit int
 	dailyLimit = 1
 	var prsentDay string
@@ -37,19 +34,22 @@ func main () {
 	_y2, _y3 := os.ReadFile (_y1)
 	
 	if _y3 != nil {
-		os.Create (_y1)
+		os.WriteFile (_y1, []byte (""), 0666)
 	} else {
 		var storeCntentFormat *regexp.Regexp
-		storeCntentFormat = regexp.MustCompile ("^[0-9a-zA-Z]+ [0-9a-zA-Z]+ [1-9][0-9]* " +
+		storeCntentFormat = regexp.MustCompile (`^[0-9a-zA-Z\-]+ [1-9][0-9]* ` +
 			"[0-9]{8,8}-(0|[1-9][0-9]*)$")
 		if storeCntentFormat.Match (_y2) == true {
 			_yM := strings.Split (string (_y2), " ")
-			googleAPI = _yM [0]
-			searchEngineId = _yM [1]
-			_y4, _ := strconv.Atoi (_yM [2])
+
+			username = _yM [0]
+
+			_y4, _ := strconv.Atoi (_yM [1])
 			dailyLimit = _y4
-			_y5 := strings.Split (_yM [3], "-")
+
+			_y5 := strings.Split (_yM [2], "-")
 			prsentDay = _y5 [0]
+
 			_y6, _ := strconv.Atoi (_y5 [1])
 			prsentDayCount  = _y6
 		}
@@ -58,7 +58,7 @@ func main () {
 	// STEP 3: ask for details to run with
 	fmt.Println ("PRMP:")
 	for {
-		fmt.Println ("------Last used Google API ID: " + googleAPI)
+		fmt.Println ("------Last username: " + username)
 		fmt.Println ("------Should it be used? 'No' or 'Yes'?")
 
 		_yX1, _ := bufio.NewReader (os.Stdin).ReadString ('\n')
@@ -78,54 +78,14 @@ func main () {
 				_y8 := strings.Replace (_y7, "\n", "", -1)
 
 				var frm1 *regexp.Regexp
-				frm1 = regexp.MustCompile ("^[0-9a-zA-Z]+$")
+				frm1 = regexp.MustCompile (`^[0-9a-zA-Z\-]+$`)
 				if frm1.MatchString (_y8) == false {
 					fmt.Println ("------" + "Invalid ID. Try again.")
 					fmt.Println ("")
 					continue
 				}
 
-				googleAPI = _y8
-				fmt.Println ("")
-				break
-			}
-		} else {
-			fmt.Println ("------Ok!")
-			fmt.Println ("")
-		}
-
-		break
-	}
-
-	for {
-		fmt.Println ("------Last used Search Engine ID: " + searchEngineId)
-		fmt.Println ("------Should it be used? 'No' or 'Yes'?")
-
-		_yY1, _ := bufio.NewReader (os.Stdin).ReadString ('\n')
-		_yY2 := strings.Replace (_yY1, "\n", "", -1)
-
-		if strings.ToLower (_yY2) != "no" && strings.ToLower (_yY2) != "yes" {
-			fmt.Println ("------Invalid input. Enter 'no' or 'yes' (without the quotes)")
-			fmt.Println ("")
-			continue
-		} else if strings.ToLower (_yY2) == "no" {
-			fmt.Println ("")
-
-			for {
-				fmt.Println ("------Enter the ID of the search engine to use:")
-
-				_y9, _ := bufio.NewReader (os.Stdin).ReadString ('\n')
-				_y10 := strings.Replace (_y9, "\n", "", -1)
-
-				var frm2 *regexp.Regexp
-				frm2 = regexp.MustCompile ("^[0-9a-zA-Z]+$")
-				if frm2.MatchString (_y10) == false {
-					fmt.Println ("------" + "Invalid ID. Try again.")
-					fmt.Println ("")
-					continue
-				}
-
-				searchEngineId = _y10
+				username = _y8
 				fmt.Println ("")
 				break
 			}
@@ -179,9 +139,8 @@ func main () {
 	}
 
 	// STEP 4: Memorize preference
-	os.WriteFile (_y1, []byte (fmt.Sprintf ("%s %s %d %s-%d",
-		googleAPI,
-		searchEngineId,
+	os.WriteFile (_y1, []byte (fmt.Sprintf ("%s %d %s-%d",
+		username,
 		dailyLimit,
 		prsentDay,
 		prsentDayCount)), 0666)
@@ -194,15 +153,14 @@ func main () {
 	dimenS1Flap = make (chan []string)
 	go srvc_krsr (dimenS1Clap, dimenS1Flap)
 
-	dimenS1Clap <- []string {googleAPI, searchEngineId, strconv.Itoa (dailyLimit), prsentDay,
+	dimenS1Clap <- []string {username, "", strconv.Itoa (dailyLimit), prsentDay,
 		strconv.Itoa (prsentDayCount)}
 
 	_x2 := strings.Replace (time.Now ().Format ("2006-01-02"), "-", "", -1)
 	prsentDay = _x2
 	prsentDayCount = prsentDayCount + 1
-	os.WriteFile (_y1, []byte (fmt.Sprintf ("%s %s %d %s-%d",
-		googleAPI,
-		searchEngineId,
+	os.WriteFile (_y1, []byte (fmt.Sprintf ("%s %d %s-%d",
+		username,
 		dailyLimit,
 		prsentDay,
 		prsentDayCount)), 0666)
@@ -234,9 +192,8 @@ func main () {
 				if msg1 [0] == "e" {
 					fmt.Println ("------ERRR (srvc_krsr):" + msg1 [1])
 				} else if msg1 [0] == "0" {
-					os.WriteFile (_y1, []byte (fmt.Sprintf ("%s %s %d %s-%s",
-					googleAPI,
-					searchEngineId,
+					os.WriteFile (_y1, []byte (fmt.Sprintf ("%s %d %s-%s",
+					username,
 					dailyLimit,
 					msg1 [1],
 					msg1 [2])), 0666)
@@ -249,26 +206,30 @@ func main () {
 			}
 
 		}
-	}		
+	}
 }
 
 func srvc_krsr (clap <-chan []string, flap chan<- []string) {
 	_x1 := <- clap
 
-	_x2, _x3 := http.Get (fmt.Sprintf ("https://www.googleapis.com/customsearch/v1?key=%s" +
-		"&cx=%s&q=hello&start=0", _x1 [0], _x1 [1]))
-	if _x3 != nil {
-		flap <- []string {"fled", _x3.Error ()}
+	var prgrm2 *exec.Cmd
+	prgrm2 = exec.Command ("php",
+		fmt.Sprintf ("/home/%s/google-ads-php/examples/Planning/GenerateKeywordIdeas.php",
+			_x1 [0]),
+		"--customerId",   "5718514237",
+		"--keywordTexts", "hi",
+		"--languageId",   "1000",
+		"--locationIds",  "21167")
+	var output bytes.Buffer
+	prgrm2.Stdout = &output
+	_h1 := prgrm2.Run ()
+
+	if _h1 != nil {
+		flap <- []string {"fled", _h1.Error ()}
 		return
 	}
-	if _x2.StatusCode != 200 {
-		flap <- []string {"fled", "Status code is: " + strconv.Itoa (_x2.StatusCode)}
-		return
-	}
-	_, _x4 := io.ReadAll (_x2.Body)
-	_x2.Body.Close ()
-	if _x4 != nil {
-		flap <- []string {"fled", _x4.Error ()}
+	if prgrm2.String () == "" {
+		flap <- []string {"fled", "No test similar keyword received"}
 		return
 	}
 
@@ -297,90 +258,50 @@ func srvc_krsr (clap <-chan []string, flap chan<- []string) {
 				flap <- []string {"2", "dcln"}
 				break
 			}
-	
-			var start string
-			start = fmt.Sprintf ("%d", (r - 1) * 10)
-			_x7, _x8 := http.Get (fmt.Sprintf ("https://www.googleapis.com/customsearch/v1?" +
-				"key=%s&cx=%s&q=%s&start=%s", _x1 [0], _x1 [1], url.QueryEscape (_x5 [1]),
-				start))
+
+			var prgram *exec.Cmd
+			prgram = exec.Command ("php",
+				fmt.Sprintf ("/home/%s/google-ads-php/examples/Planning/GenerateKeywordIdeas.php",
+					_x1 [0]),
+				"--customerId",   "5718514237",
+				"--keywordTexts", _x5 [1],
+				"--languageId",   "1000",
+				"--locationIds",  "21167")
+			var kywrds bytes.Buffer
+			prgram.Stdout = &kywrds
+			_v1 := prgram.Run ()
+			
 			_xJ, _ := strconv.Atoi (_x1 [4])
 			_xJ = _xJ + 1
 			_x1 [4] = strconv.Itoa (_xJ)
 			flap <- []string {"0", _x1 [3], _x1 [4]}
-			if _x8 != nil {
+
+			if _v1 != nil {
 				flap <- []string {"2", "fled"}
-				flap <- []string {"e", _x8.Error ()}
+				flap <- []string {"e", _v1.Error ()}
 				break
 			}
-			if _x7.StatusCode != 200 {
+			if prgram.String () == "" {
 				flap <- []string {"2", "fled"}
-				flap <- []string {"e", "Status code is: " + strconv.Itoa (_x7.StatusCode)}
-				break
-			}
-			_x9, _xA := io.ReadAll (_x7.Body)
-			_x7.Body.Close ()
-			if _xA != nil {
-				flap <- []string {"2", "fled"}
-				flap <- []string {"e", _xA.Error ()}
+				flap <- []string {"e", "No keyword was provided"}
 				break
 			}
 
 			var nextItrt bool
 			nextItrt = true
-			for i := 1; i <= int (gjson.Get (string (_x9), "items.#").Uint ()); i ++ {
-				_xD := fmt.Sprintf ("items.%d.title", i - 1)
-				_xC := gjson.Get (string (_x9), _xD).String ()
-
-				_xC = strings.Trim (_xC, " ")
-				var multipleSpacePattern *regexp.Regexp
-				multipleSpacePattern = regexp.MustCompile (" {2,}")
-				_xC = multipleSpacePattern.ReplaceAllString (_xC, " ")
-				_xF := strings.Split (_x5 [1], " ")
-				_xG := regexp.QuoteMeta (_xF [0]) + "[a-z]*"
-				for i, word := range _xF {
-					if i == 0 {
-						continue
-					}
-					_xG = _xG + "|" + regexp.QuoteMeta (word) + "[a-z]*"
-				}
-				var keywordPattern string
-				keywordPattern = fmt.Sprintf (`(?i)([a-zA-Z0-9']+(\-[a-zA-Z0-9'])* +)*(%s)` +
-					`( +[a-zA-Z0-9']+(\-[a-zA-Z0-9'])*)*( \.\.\.)*`, _xG)
-				_xH := regexp.MustCompile (keywordPattern)
-				_xI := _xH.FindString (_xC)
-
-				if _xI == "" {
+			for _, _v3 := range strings.Split (kywrds.String (), "\n") {
+				_v4 := strings.Replace (_v3, ">> ", "", -1)
+				_v5 := strings.Split (_v4, " | ")
+			
+				if _v5 [0] == "" {
 					continue
 				}
 
-				var abbreviatedPattern *regexp.Regexp
-				abbreviatedPattern = regexp.MustCompile (`\.\.\.$`)
-				if abbreviatedPattern.Match ([]byte (_xI)) == true {
+				if _v5 [0] == _x5 [1] {
 					continue
 				}
-
-				_xI = strings.ToLower (_xI)
-				var found bool
-				found = false
-				for i, word := range result {
-					if i <= 1 {
-						continue
-					}
-
-					if word == _xI {
-						found = true
-						break
-					}
-				}
-				if found == true {
-					continue
-				}
-
-				if _xI == strings.ToLower (_x5 [1]) {
-					continue
-				}
-
-				result = append (result, _xI)
+				
+				result = append (result, _v5 [0])
 
 				if _xB == (len (result) - 2) {
 					nextItrt = false
@@ -393,10 +314,6 @@ func srvc_krsr (clap <-chan []string, flap chan<- []string) {
 			}
 		}
 		
-		if len (result) == 2 {
-			continue
-		}
-
 		flap <- result
 	}
 }
@@ -449,24 +366,3 @@ var (
 	intr_krsrHTTP_clap <-chan []string
 	intr_krsrHTTP_flap chan<- []string
 	intr_krsrHTTP_lock *sync.Mutex = &sync.Mutex {} )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

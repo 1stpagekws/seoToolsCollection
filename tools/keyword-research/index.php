@@ -117,17 +117,15 @@ determineDiplaySizeToUse (); ?>
 
 					_x1 = parseInt (qntity);
 					if ((outputs.length - 1) < _x1) {
-						document.getElementById ("m_pS").innerHTML = "To ensure fair usage, " +
-							"server provided only " + (outputs.length - 1).toString () +
+						document.getElementById ("m_pS").innerHTML = "Completed successfully:" +
+							" Server found just " + (outputs.length - 1).toString () +
 							" keyword(s)";
-						document.getElementById ("pStt").innerHTML = "To ensure fair usage, " +
-							"server provided only " + (outputs.length - 1).toString () +
+						document.getElementById ("pStt").innerHTML = "Completed successfully:" +
+							" Server found just " + (outputs.length - 1).toString () +
 							" keyword(s)";
 					} else {
-						document.getElementById ("m_pS").innerHTML = "Operation completed " +
-							"successfully";
-						document.getElementById ("pStt").innerHTML = "Operation completed " +
-							"successfully";
+						document.getElementById ("m_pS").innerHTML = "Completed successfully";
+						document.getElementById ("pStt").innerHTML = "Completed successfully";
 					}
 					for (i = 2; i <= outputs.length; i ++) {
 						if (i != 2) {
@@ -143,8 +141,6 @@ document.getElementById ("m_rs").value = document.getElementById("m_rs").value +
 						} else{
 document.getElementById ("rslt").value = document.getElementById("rslt").value + outputs[i - 1];
 						}
-						
-						sleep (4000 * i);
 					}
 					return;
 				} else {

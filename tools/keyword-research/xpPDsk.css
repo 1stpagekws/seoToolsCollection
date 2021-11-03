@@ -20,7 +20,6 @@
 		display:flex;
 		justify-content:space-between;} #dskt input, #dskt textarea {
 			border-radius:1mm;
-			font-size:4mm;
 			font-family:'Roboto Mono';}
 		#sde1 {
 			width:48%;}
@@ -31,12 +30,14 @@
 				#kywr {
 					border:1px solid #4a95bf;
 					padding:1%;
+					font-size:4mm;
 					text-align:center;
 					width:80%;}
 				#qntt {
 					border:1px solid #4a95bf;
 					text-align:center;
 					padding:1%;
+					font-size:4mm;
 					width:13%;} #inpt input {
 						padding-top:4mm;
 						padding-bottom:4mm;}
@@ -62,23 +63,25 @@
 					margin-bottom:16mm;
 					padding:1%;
 					padding-top:4mm;
+					text-align:center;
 					padding-bottom:4mm;
 					font-weight:900;
 					background-color:#f0f0f0;
-					width:98%;
-					text-align:center;}
+					width:98%;}
 				#fltr #fInp {
 					display:flex;
 					margin-bottom:2mm;
-					justify-content:space-between;} #fltr #fInp input {
+					justify-content:space-between;} #fInp input {
 						padding:1%;
+						text-align:center;
 						border:1px solid #888888;
 						padding-top:4mm;
-						text-align:center;
 						padding-bottom:4mm;}
 					#pstv {
+						font-size:4mm;
 						width:46.5%;}
 					#ngtv {
+						font-size:4mm;
 						width:46.5%;}
 				#fltr #fBtt {
 					display:block;
@@ -114,8 +117,7 @@
 			#rslt {
 				display:block;
 				width:97%;
-				font-size:1mm !important;
-				text-align:center;
+				font-size:3.5mm;
 				margin:auto;
 				padding:1%;
 				height:64mm;
