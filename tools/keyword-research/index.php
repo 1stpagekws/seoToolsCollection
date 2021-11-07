@@ -14,7 +14,7 @@ determineDiplaySizeToUse (); ?>
 	function prcess () {
 		/*STEP 0:*/
 		// change border colour
-	
+
 		/*STEP 1: disable button*/
 		//document.getElementById ("m_go").disabled = false;
 		//document.getElementById ("gooo").disabled = false;
@@ -136,7 +136,7 @@ document.getElementById ("rslt").value = document.getElementById ("rslt").value 
 							}
 						}
 
-						if (source == "mobile") {						
+						if (source == "mobile") {
 document.getElementById ("m_rs").value = document.getElementById("m_rs").value + outputs[i - 1];
 						} else{
 document.getElementById ("rslt").value = document.getElementById("rslt").value + outputs[i - 1];
@@ -153,7 +153,7 @@ document.getElementById ("rslt").value = document.getElementById("rslt").value +
 						"Try again";
 					return;
 				}
-			}	
+			}
 		}
 		conn.open ("GET", "/tools/keyword-research/cnnctr.php?kyword=" + encodeURI (kyword) +
 			"&qntity=" + qntity, true)
@@ -161,12 +161,12 @@ document.getElementById ("rslt").value = document.getElementById("rslt").value +
 		if (source == "mobile") {
 			document.getElementById ("int1").style.display = "none";
 			document.getElementById ("int2").style.display = "block";
-			
+
 			document.getElementById ("m_pr").value = 1;
-			document.getElementById ("m_pS").innerHTML = "Connecting to the internet...";
+			document.getElementById ("m_pS").innerHTML = "Hold on... Looking for related keywords...";
 		} else {
 			document.getElementById ("prgr").value = 1;
-			document.getElementById ("pStt").innerHTML = "Connecting to the internet...";
+			document.getElementById ("pStt").innerHTML = "Hold on... Looking for related keywords...";
 		}
 	}
 
@@ -302,7 +302,7 @@ keywords you want. I will fetch them for you.</div>
 		<div id="dskt">
 			<div id="sde1">
 				<span   id="inpt"><input  id="kywr" type="text" placeholder="KEYWORD" />
-				<!--C--><input id="qntt" type="text" placeholder="QUANTITY" /></span>
+				<!--C--><input id="qntt" type="text" placeholder="QUANTITY" value="250" hidden /></span>
 				<button id="gooo" type="submit" onclick="prcess ()">GO</button>
 				<span   id="fltr">
 					<span id="ttle">FILTER</span>
@@ -321,7 +321,7 @@ keywords you want. I will fetch them for you.</div>
 		<div id="mble">
 			<div id="int1">
 				<span   id="m_in"><input  id="m_ky" type="text" placeholder="Keyword" />
-				<!--C--><input id="m_qn" type="text" placeholder="Quantity" /></span>
+				<!--C--><input id="m_qn" type="text" placeholder="Quantity" value="250" hidden /></span>
 				<button id="m_go" type="submit" onclick="prcess ()">GO</button></div>
 			<div id="int2">
 				<progress id="m_pr" max="2" value="0"> </progress>
@@ -329,7 +329,7 @@ keywords you want. I will fetch them for you.</div>
 				<textarea id="m_rs" placeholder="RESULT WILL BE DISPLAYED HERE" disabled></textarea>
 				<span     id="m_bt"><button id="m_bc" type="submit" onclick="back ()">BACK</button>
 				<!--C--><button id="m_cp" type="submit" onclick="copy ()">COPY</button></span>
-				
+
 				<span     id="m_fl">
 					<span   id="m_tt">FILTER</span>
 					<span   id="m_fI"><input id="m_ng" type="text" placeholder="Negative filter"/>
